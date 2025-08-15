@@ -35,6 +35,7 @@
 * LLM-as-a-Judge prompts; pairwise comparisons; bias mitigation (swap order, CoT rationale).
 * Train a lightweight reward model (distilled from judge preferences, offline scoring).
 * Reward shaping design: final answer reward + step-wise novelty/relevance rewards.
+* REQUIRED generator alignment (TRL): build preference datasets and run DPO/IPO/ORPO on a 7B–8B open model with QLoRA; evaluate on CORAL.
 
 4) Weeks 4–5: BC and RAFT
 * Generate expert trajectories from a strong baseline; BC pretraining to fix cold start.
@@ -49,6 +50,7 @@
 (Optional) Weeks 7–8: PPO & extensions
 * PPO policy-value training with clipped updates for stability.
 * Explore adaptive granularity, memory modules, reward-model distillation.
+* REQUIRED (if choosing online generator RL): PPO for the generator with OpenRLHF (2–4 GPUs).
 
 #### **4. System Blueprint**
 
