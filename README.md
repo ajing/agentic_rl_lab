@@ -71,3 +71,13 @@ OPENAI_API_KEY=sk-...
 OPENROUTER_API_KEY=sk-or-...
 ```
 Scripts auto-load `.env` if `python-dotenv` is installed. Otherwise, export the variables in your shell.
+
+## Learning & Documentation
+
+### Weekly Learnings
+- [`learning/week1.md`](learning/week1.md) - Week 1 insights, failure modes, and action items from baseline CORAL evaluation
+
+### Project Documentation
+- [`design/plan.md`](design/plan.md) - Overall project plan and timeline
+- [`design/week2_plan.md`](design/week2_plan.md) - Week 2 RL environment implementation plan
+- [`design/case_studies/`](design/case_studies/) - Detailed case studies and failure analysis
