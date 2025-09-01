@@ -1,9 +1,12 @@
 ### Week 2 Plan: RL Environment & Candidate Actions
 
+> **Week 1 Learnings**: See [learning/week1.md](../learning/week1.md) for key insights, failure modes, and action items from baseline evaluation.
+
 #### Objectives
 - Implement a minimal RL environment around the RAG pipeline (state/action/termination).
 - Use BM25 + vector retrieval (RRF) to form a top-K candidate set per query.
 - Add reward shaping with novelty (MMR-style) + relevance signals; keep a final reward hook.
+- Address Week 1 issues: query rewriting, cross-encoder reranking, MMR deduplication.
 - Provide a script to run one episode with random/greedy policy for smoke testing on CORAL.
 
 #### Scope
@@ -20,8 +23,11 @@
 #### Deliverables (this week)
 1) Candidate generator (RRF over BM25 + vector) returning top-K doc IDs with features
 2) RL env class (Python) with step/reset API and reward shaping
-3) One-episode runner (random/greedy) + logging of selections and rewards
-4) Smoke test results on 1–3 CORAL turns; brief notes on behavior
+3) Query rewriting module (addresses coreference/topic shift from Week 1)
+4) Cross-encoder reranker for top-100 candidates (improves precision)
+5) MMR deduplication with λ sweep {0.2, 0.4, 0.6, 0.8}
+6) One-episode runner (random/greedy) + logging of selections and rewards
+7) Smoke test results on 1–3 CORAL turns; brief notes on behavior
 
 #### Metrics
 - Step rewards (avg/std), selection overlap with gold (Recall@k), episode length
