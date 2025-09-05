@@ -1,0 +1,8 @@
+{
+  "num_eval": 50,
+  "em": 0.0,
+  "f1": 0.1551,
+  "elapsed_sec": 91.07,
+  "k": 5,
+  "gen_model": "gpt-4o-mini"
+}
