@@ -50,50 +50,82 @@ def test_week3_with_week2():
         
         logger.info("✅ Week 3 components initialized")
         
-        # Test integration: Run episode with reward shaping
-        test_query = "Who won the FA Cup in 2020?"
-        test_history = []
+        # Test integration with realistic conversational scenarios
+        realistic_scenarios = [
+            {
+                "query": "I'm planning a trip to Japan next month. What should I know about the weather and cultural etiquette?",
+                "history": [],
+                "expected_topics": ["weather", "cultural etiquette", "travel tips"]
+            },
+            {
+                "query": "What are the main differences between machine learning and deep learning?",
+                "history": [],
+                "expected_topics": ["machine learning", "deep learning", "neural networks"]
+            },
+            {
+                "query": "How does climate change affect global food security?",
+                "history": [],
+                "expected_topics": ["climate change", "food security", "agriculture"]
+            }
+        ]
         
-        # Run episode
-        episode_result = episode_runner.run_episode(
-            test_query,
-            PolicyConfig(policy_type="greedy", selection_strategy="top_score"),
-            test_history
-        )
+        logger.info("Testing integration with realistic conversational scenarios...")
         
-        logger.info(f"✅ Episode completed: {len(episode_result.selected_doc_ids)} documents selected")
+        for i, scenario in enumerate(realistic_scenarios):
+            test_query = scenario["query"]
+            test_history = scenario["history"]
         
-        # Test reward shaping
-        reward_shaper.reset_episode()
-        
-        # Simulate step-wise rewards
-        for i, doc_id in enumerate(episode_result.selected_doc_ids):
-            # Find document content
-            doc_content = ""
-            for doc in episode_result.final_state.candidate_pool:
-                if doc.doc_id == doc_id:
-                    doc_content = doc.content
-                    break
+            # Run episode
+            episode_result = episode_runner.run_episode(
+                test_query,
+                PolicyConfig(policy_type="greedy", selection_strategy="top_score"),
+                test_history
+            )
             
-            if doc_content:
+            logger.info(f"  Scenario {i+1}: Episode completed with {len(episode_result.selected_doc_ids)} documents selected")
+            
+            # Test reward shaping
+            reward_shaper.reset_episode()
+            
+            # Simulate step-wise rewards with realistic document content
+            realistic_docs = [
+                f"Document about {scenario['expected_topics'][0]} for query: {test_query[:50]}...",
+                f"Additional information on {scenario['expected_topics'][1] if len(scenario['expected_topics']) > 1 else 'related topics'}",
+                f"Supporting details for {scenario['expected_topics'][2] if len(scenario['expected_topics']) > 2 else 'context'}"
+            ]
+            
+            for j, doc_content in enumerate(realistic_docs[:len(episode_result.selected_doc_ids)]):
                 step_reward = reward_shaper.compute_step_reward(
-                    test_query, doc_content, 0.8, i+1
+                    test_query, doc_content, 0.8 - j * 0.1, j+1
                 )
-                logger.info(f"✅ Step {i+1} reward: {step_reward.total_reward:.3f}")
+                logger.info(f"    Step {j+1} reward: {step_reward.total_reward:.3f} "
+                           f"(Novelty: {step_reward.novelty_reward:.3f}, "
+                           f"Relevance: {step_reward.relevance_reward:.3f})")
+            
+            # Test final reward with realistic answer
+            realistic_answers = [
+                "For Japan in October, expect mild temperatures around 15-20°C with occasional rain. Cultural etiquette includes bowing when greeting, removing shoes indoors, and being quiet on public transport.",
+                "Machine learning is a broader field that includes various algorithms for learning from data, while deep learning is a subset that uses neural networks with multiple layers for complex pattern recognition.",
+                "Climate change impacts food security through extreme weather events, changing precipitation patterns, and rising temperatures that affect crop yields and agricultural productivity."
+            ]
+            
+            final_answer = realistic_answers[i] if i < len(realistic_answers) else "Comprehensive answer covering the main aspects of the query."
+            final_reward = reward_shaper.compute_episode_reward(test_query, final_answer)
+            logger.info(f"    Final episode reward: {final_reward.total_reward:.3f}")
+            
+            # Test reward model scoring
+            context = realistic_docs[:len(episode_result.selected_doc_ids)]
+            with reward_model.eval():
+                import torch
+                with torch.no_grad():
+                    result = reward_model(test_query, final_answer, context)
+                    reward_score = result["reward_score"].item()
+                    criteria_scores = {k: v.item() for k, v in result["criteria_scores"].items()}
+                    logger.info(f"    Reward model score: {reward_score:.3f} "
+                               f"(Accuracy: {criteria_scores['accuracy']:.3f}, "
+                               f"Completeness: {criteria_scores['completeness']:.3f})")
         
-        # Test final reward
-        final_answer = "Arsenal won the FA Cup in 2020."  # Simplified
-        final_reward = reward_shaper.compute_episode_reward(test_query, final_answer)
-        logger.info(f"✅ Final episode reward: {final_reward.total_reward:.3f}")
-        
-        # Test reward model scoring
-        context = [doc.content for doc in episode_result.final_state.selected_documents]
-        with reward_model.eval():
-            import torch
-            with torch.no_grad():
-                result = reward_model(test_query, final_answer, context)
-                reward_score = result["reward_score"].item()
-                logger.info(f"✅ Reward model score: {reward_score:.3f}")
+        logger.info("✅ Integration test completed with realistic scenarios")
         
         return True
         
@@ -109,16 +141,39 @@ def test_preference_dataset_builder():
         from src.data.preference_dataset import PreferenceDatasetBuilder, PreferenceExample
         from src.reward.llm_judge import AnswerPair
         
-        # Create mock preference examples
+        # Create realistic preference examples
         preferences = [
             PreferenceExample(
-                query="Who won the FA Cup in 2020?",
-                chosen_answer="Arsenal won the FA Cup in 2020, defeating Chelsea 2-1 in the final.",
-                rejected_answer="The FA Cup is an annual football competition in England.",
-                chosen_context=["Arsenal defeated Chelsea in the 2020 FA Cup final."],
-                rejected_context=["The FA Cup is England's premier cup competition."],
+                query="I'm planning a trip to Japan next month. What should I know about the weather and cultural etiquette?",
+                chosen_answer="For Japan in October, expect mild temperatures around 15-20°C with occasional rain. Pack layers and an umbrella. Cultural etiquette includes bowing when greeting, removing shoes indoors, and being quiet on public transport. Avoid pointing with your finger and don't eat while walking.",
+                rejected_answer="Japan is a country in Asia. The weather changes with seasons. People there have different customs.",
+                chosen_context=[
+                    "Japan has four distinct seasons with October being part of autumn, featuring mild weather and beautiful fall foliage.",
+                    "Japanese culture emphasizes respect, harmony, and proper etiquette in social interactions.",
+                    "Weather in Japan varies by region, with Tokyo experiencing mild autumn temperatures in October."
+                ],
+                rejected_context=[
+                    "Japan is an island nation in East Asia with a rich cultural heritage.",
+                    "The country experiences seasonal weather patterns typical of temperate climates."
+                ],
                 preference_score=0.9,
-                reasoning="The chosen answer directly answers the question with specific details."
+                reasoning="The chosen answer provides specific, actionable information about weather and detailed cultural etiquette guidelines, while the rejected answer is too vague and generic."
+            ),
+            PreferenceExample(
+                query="What are the main differences between machine learning and deep learning?",
+                chosen_answer="Machine learning is a broader field that includes various algorithms for learning from data, while deep learning is a subset that uses neural networks with multiple layers. Deep learning excels at complex pattern recognition in unstructured data like images and text, while traditional ML works well with structured data and is often more interpretable.",
+                rejected_answer="Machine learning and deep learning are both types of artificial intelligence that help computers learn from data.",
+                chosen_context=[
+                    "Machine learning encompasses algorithms that learn patterns from data without explicit programming.",
+                    "Deep learning uses artificial neural networks with multiple hidden layers to model complex relationships.",
+                    "Traditional ML algorithms include decision trees, SVM, and linear regression, while deep learning includes CNNs, RNNs, and transformers."
+                ],
+                rejected_context=[
+                    "Artificial intelligence includes various approaches to making computers intelligent.",
+                    "Both machine learning and deep learning are important technologies in AI."
+                ],
+                preference_score=0.85,
+                reasoning="The chosen answer clearly distinguishes between the two concepts with specific examples and use cases, while the rejected answer is too simplistic and doesn't explain the differences."
             )
         ]
         

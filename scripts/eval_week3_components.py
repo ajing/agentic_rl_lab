@@ -121,30 +121,44 @@ class Week3Evaluator:
         logger.info("Reward shaper initialized")
     
     def load_test_queries(self, num_queries: int = 20) -> List[Tuple[str, List[ConversationTurn]]]:
-        """Load test queries from CORAL dataset."""
-        # For now, create some test queries
-        # In practice, you would load from the actual CORAL test set
+        """Load realistic test queries for conversational RAG evaluation."""
+        # Realistic conversational queries that represent real-world use cases
         test_queries = [
-            ("Who won the FA Cup in 2020?", []),
-            ("What is the capital of France?", []),
-            ("Tell me about the history of the internet.", []),
-            ("What are the benefits of renewable energy?", []),
-            ("How does machine learning work?", []),
-            ("What is the population of Tokyo?", []),
-            ("Explain the theory of relativity.", []),
-            ("What are the main causes of climate change?", []),
-            ("How do vaccines work?", []),
-            ("What is the structure of DNA?", []),
-            ("Who wrote Romeo and Juliet?", []),
-            ("What is the speed of light?", []),
-            ("How do solar panels work?", []),
-            ("What is artificial intelligence?", []),
-            ("Explain photosynthesis.", []),
-            ("What is the largest planet in our solar system?", []),
-            ("How does the human brain work?", []),
-            ("What is quantum computing?", []),
-            ("Explain the water cycle.", []),
-            ("What is blockchain technology?", [])
+            # Travel and Culture
+            ("I'm planning a trip to Japan next month. What should I know about the weather and cultural etiquette?", []),
+            ("What are the must-visit places in Paris for a first-time visitor?", []),
+            ("How do I apply for a visa to visit the United States?", []),
+            
+            # Technology and Science
+            ("What are the main differences between machine learning and deep learning?", []),
+            ("How do solar panels work to generate electricity?", []),
+            ("What is the difference between 5G and 4G networks?", []),
+            ("Explain how blockchain technology works in simple terms.", []),
+            
+            # Health and Wellness
+            ("What are the health benefits of regular exercise?", []),
+            ("How does meditation affect mental health?", []),
+            ("What should I know about intermittent fasting?", []),
+            
+            # Business and Finance
+            ("What are the key factors to consider when starting a small business?", []),
+            ("How does compound interest work in investments?", []),
+            ("What is the difference between stocks and bonds?", []),
+            
+            # Education and Learning
+            ("What are the best strategies for learning a new language?", []),
+            ("How can I improve my memory and concentration?", []),
+            ("What are the benefits of online learning versus traditional education?", []),
+            
+            # Environment and Sustainability
+            ("How does climate change affect global food security?", []),
+            ("What are the most effective ways to reduce my carbon footprint?", []),
+            ("How do renewable energy sources compare to fossil fuels?", []),
+            
+            # Social and Cultural
+            ("What are the main causes of social inequality?", []),
+            ("How has social media changed the way people communicate?", []),
+            ("What are the benefits and challenges of remote work?", [])
         ]
         
         return test_queries[:num_queries]
