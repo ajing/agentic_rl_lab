@@ -1,0 +1,101 @@
+{
+  "episode_id": "episode_103_4405",
+  "query": "How have the European Structural and Investment Funds impacted Bulgaria since its EU accession in 2007?",
+  "final_answer": null,
+  "metrics": {
+    "total_reward": 0.30000000000000004,
+    "avg_reward": 0.10000000000000002,
+    "episode_length": 3,
+    "num_documents_selected": 3,
+    "final_step": 3
+  },
+  "states": [
+    {
+      "step": 1,
+      "selected_doc_ids": [
+        "188781"
+      ],
+      "num_remaining": 19,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 103,
+        "rewritten_query_length": 103
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "188781",
+        "134899"
+      ],
+      "num_remaining": 18,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 103,
+        "rewritten_query_length": 103
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "188781",
+        "134899",
+        "62537"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 103,
+        "rewritten_query_length": 103
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "188781",
+        "134899",
+        "62537"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 103,
+        "rewritten_query_length": 103
+      }
+    }
+  ],
+  "actions": [
+    {
+      "doc_id": "188781",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "134899",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "62537",
+      "action_type": "select"
+    }
+  ],
+  "rewards": [
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    }
+  ]
+}

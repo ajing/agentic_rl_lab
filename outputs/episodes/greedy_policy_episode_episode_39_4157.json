@@ -1,0 +1,101 @@
+{
+  "episode_id": "episode_39_4157",
+  "query": "How did her singing career get started?",
+  "final_answer": null,
+  "metrics": {
+    "total_reward": 0.30000000000000004,
+    "avg_reward": 0.10000000000000002,
+    "episode_length": 3,
+    "num_documents_selected": 3,
+    "final_step": 3
+  },
+  "states": [
+    {
+      "step": 1,
+      "selected_doc_ids": [
+        "118296"
+      ],
+      "num_remaining": 19,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 39,
+        "rewritten_query_length": 39
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "118296",
+        "78796"
+      ],
+      "num_remaining": 18,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 39,
+        "rewritten_query_length": 39
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "118296",
+        "78796",
+        "117204"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 39,
+        "rewritten_query_length": 39
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "118296",
+        "78796",
+        "117204"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 39,
+        "rewritten_query_length": 39
+      }
+    }
+  ],
+  "actions": [
+    {
+      "doc_id": "118296",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "78796",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "117204",
+      "action_type": "select"
+    }
+  ],
+  "rewards": [
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    }
+  ]
+}

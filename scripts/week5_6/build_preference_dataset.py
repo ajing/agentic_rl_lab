@@ -16,7 +16,7 @@ from tqdm import tqdm
 import time
 
 # Add src to path
-sys.path.append(str(Path(__file__).resolve().parents[1]))
+sys.path.append(str(Path(__file__).resolve().parents[2]))
 
 from src.env.rag_environment import RAGEnvironment, ConversationTurn
 from src.policy.episode_runner import EpisodeRunner, PolicyConfig

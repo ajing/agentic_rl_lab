@@ -1,0 +1,101 @@
+{
+  "episode_id": "episode_85_9197",
+  "query": "And how did superdelegate support impact the campaign during the fundraising efforts?",
+  "final_answer": null,
+  "metrics": {
+    "total_reward": 0.30000000000000004,
+    "avg_reward": 0.10000000000000002,
+    "episode_length": 3,
+    "num_documents_selected": 3,
+    "final_step": 3
+  },
+  "states": [
+    {
+      "step": 1,
+      "selected_doc_ids": [
+        "111129"
+      ],
+      "num_remaining": 19,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 85,
+        "rewritten_query_length": 85
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "111129",
+        "1425"
+      ],
+      "num_remaining": 18,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 85,
+        "rewritten_query_length": 85
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "111129",
+        "1425",
+        "1422"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 85,
+        "rewritten_query_length": 85
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "111129",
+        "1425",
+        "1422"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 85,
+        "rewritten_query_length": 85
+      }
+    }
+  ],
+  "actions": [
+    {
+      "doc_id": "111129",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "1425",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "1422",
+      "action_type": "select"
+    }
+  ],
+  "rewards": [
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    }
+  ]
+}

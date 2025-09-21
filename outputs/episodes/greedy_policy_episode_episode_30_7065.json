@@ -1,0 +1,76 @@
+{
+  "episode_id": "episode_30_7065",
+  "query": "Who won the 2016 World Series?",
+  "final_answer": null,
+  "metrics": {
+    "total_reward": 0.2,
+    "avg_reward": 0.1,
+    "episode_length": 2,
+    "num_documents_selected": 2,
+    "final_step": 2
+  },
+  "states": [
+    {
+      "step": 1,
+      "selected_doc_ids": [
+        "130838"
+      ],
+      "num_remaining": 9,
+      "features": {
+        "num_candidates": 10,
+        "query_length": 30,
+        "rewritten_query_length": 30
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "130838",
+        "1274"
+      ],
+      "num_remaining": 8,
+      "features": {
+        "num_candidates": 10,
+        "query_length": 30,
+        "rewritten_query_length": 30
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "130838",
+        "1274"
+      ],
+      "num_remaining": 8,
+      "features": {
+        "num_candidates": 10,
+        "query_length": 30,
+        "rewritten_query_length": 30
+      }
+    }
+  ],
+  "actions": [
+    {
+      "doc_id": "130838",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "1274",
+      "action_type": "select"
+    }
+  ],
+  "rewards": [
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    }
+  ]
+}

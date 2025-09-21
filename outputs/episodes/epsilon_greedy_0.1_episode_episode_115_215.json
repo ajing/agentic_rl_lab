@@ -1,0 +1,101 @@
+{
+  "episode_id": "episode_115_215",
+  "query": "What is the One Rank One Pension scheme and why has it been a significant issue among Indian armed forces veterans?",
+  "final_answer": null,
+  "metrics": {
+    "total_reward": 0.30000000000000004,
+    "avg_reward": 0.10000000000000002,
+    "episode_length": 3,
+    "num_documents_selected": 3,
+    "final_step": 3
+  },
+  "states": [
+    {
+      "step": 1,
+      "selected_doc_ids": [
+        "151713"
+      ],
+      "num_remaining": 19,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 115,
+        "rewritten_query_length": 115
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "151713",
+        "157602"
+      ],
+      "num_remaining": 18,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 115,
+        "rewritten_query_length": 115
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "151713",
+        "157602",
+        "39403"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 115,
+        "rewritten_query_length": 115
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "151713",
+        "157602",
+        "39403"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 115,
+        "rewritten_query_length": 115
+      }
+    }
+  ],
+  "actions": [
+    {
+      "doc_id": "151713",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "157602",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "39403",
+      "action_type": "select"
+    }
+  ],
+  "rewards": [
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    }
+  ]
+}

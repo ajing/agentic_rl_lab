@@ -1,0 +1,101 @@
+{
+  "episode_id": "episode_112_959",
+  "query": "And how does it contribute to the stabilization of MHC class II molecules in terms of their chaperonal function?",
+  "final_answer": null,
+  "metrics": {
+    "total_reward": 0.30000000000000004,
+    "avg_reward": 0.10000000000000002,
+    "episode_length": 3,
+    "num_documents_selected": 3,
+    "final_step": 3
+  },
+  "states": [
+    {
+      "step": 1,
+      "selected_doc_ids": [
+        "111044"
+      ],
+      "num_remaining": 19,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 112,
+        "rewritten_query_length": 112
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "111044",
+        "1703"
+      ],
+      "num_remaining": 18,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 112,
+        "rewritten_query_length": 112
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "111044",
+        "1703",
+        "6383"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 112,
+        "rewritten_query_length": 112
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "111044",
+        "1703",
+        "6383"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 112,
+        "rewritten_query_length": 112
+      }
+    }
+  ],
+  "actions": [
+    {
+      "doc_id": "111044",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "1703",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "6383",
+      "action_type": "select"
+    }
+  ],
+  "rewards": [
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    }
+  ]
+}

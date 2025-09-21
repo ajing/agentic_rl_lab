@@ -13,15 +13,15 @@ from pathlib import Path
 from typing import List, Dict, Any
 import argparse
 
-# Add src to path
-sys.path.append(str(Path(__file__).parent.parent / "src"))
+# Add project root to path (so we can import src modules)
+sys.path.append(str(Path(__file__).parent.parent.parent))
 
-from retriever.query_rewriter import QueryRewriter, ConversationTurn
-from retriever.rrf_generator import RRFCandidateGenerator
-from reranker.cross_encoder import CrossEncoderReranker
-from reranker.mmr import MMRDeduplicator
-from env.rag_environment import RAGEnvironment
-from policy.episode_runner import EpisodeRunner, PolicyConfig
+from src.retriever.query_rewriter import QueryRewriter, ConversationTurn
+from src.retriever.rrf_generator import RRFCandidateGenerator
+from src.reranker.cross_encoder import CrossEncoderReranker
+from src.reranker.mmr import MMRDeduplicator
+from src.env.rag_environment import RAGEnvironment
+from src.policy.episode_runner import EpisodeRunner, PolicyConfig
 
 logger = logging.getLogger(__name__)
 

@@ -1,0 +1,101 @@
+{
+  "episode_id": "episode_49_3024",
+  "query": "What changes happened mid-season for Force India?",
+  "final_answer": null,
+  "metrics": {
+    "total_reward": 0.30000000000000004,
+    "avg_reward": 0.10000000000000002,
+    "episode_length": 3,
+    "num_documents_selected": 3,
+    "final_step": 3
+  },
+  "states": [
+    {
+      "step": 1,
+      "selected_doc_ids": [
+        "1078"
+      ],
+      "num_remaining": 19,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 49,
+        "rewritten_query_length": 49
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "1078",
+        "2919"
+      ],
+      "num_remaining": 18,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 49,
+        "rewritten_query_length": 49
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "1078",
+        "2919",
+        "136203"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 49,
+        "rewritten_query_length": 49
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "1078",
+        "2919",
+        "136203"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 49,
+        "rewritten_query_length": 49
+      }
+    }
+  ],
+  "actions": [
+    {
+      "doc_id": "1078",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "2919",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "136203",
+      "action_type": "select"
+    }
+  ],
+  "rewards": [
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    }
+  ]
+}

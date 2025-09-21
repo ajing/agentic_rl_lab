@@ -14,8 +14,8 @@ import random
 import numpy as np
 from tqdm import tqdm
 
-# Add src to path
-sys.path.append(str(Path(__file__).resolve().parents[1]))
+# Add src to path (go up to project root, then to src)
+sys.path.append(str(Path(__file__).resolve().parents[2]))
 
 from src.env.rag_environment import RAGEnvironment, ConversationTurn
 from src.policy.episode_runner import EpisodeRunner, PolicyConfig

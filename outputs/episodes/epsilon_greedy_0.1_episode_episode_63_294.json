@@ -1,0 +1,101 @@
+{
+  "episode_id": "episode_63_294",
+  "query": "What are the common causes of deterioration in these specimens?",
+  "final_answer": null,
+  "metrics": {
+    "total_reward": 0.30000000000000004,
+    "avg_reward": 0.10000000000000002,
+    "episode_length": 3,
+    "num_documents_selected": 3,
+    "final_step": 3
+  },
+  "states": [
+    {
+      "step": 1,
+      "selected_doc_ids": [
+        "24831"
+      ],
+      "num_remaining": 19,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 63,
+        "rewritten_query_length": 63
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "24831",
+        "109816"
+      ],
+      "num_remaining": 18,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 63,
+        "rewritten_query_length": 63
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "24831",
+        "109816",
+        "146683"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 63,
+        "rewritten_query_length": 63
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "24831",
+        "109816",
+        "146683"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 63,
+        "rewritten_query_length": 63
+      }
+    }
+  ],
+  "actions": [
+    {
+      "doc_id": "24831",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "109816",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "146683",
+      "action_type": "select"
+    }
+  ],
+  "rewards": [
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    }
+  ]
+}

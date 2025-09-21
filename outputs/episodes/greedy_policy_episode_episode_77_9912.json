@@ -1,0 +1,101 @@
+{
+  "episode_id": "episode_77_9912",
+  "query": "How do these cells contribute to angiogenesis and further cancer progression?",
+  "final_answer": null,
+  "metrics": {
+    "total_reward": 0.30000000000000004,
+    "avg_reward": 0.10000000000000002,
+    "episode_length": 3,
+    "num_documents_selected": 3,
+    "final_step": 3
+  },
+  "states": [
+    {
+      "step": 1,
+      "selected_doc_ids": [
+        "184874"
+      ],
+      "num_remaining": 19,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 77,
+        "rewritten_query_length": 77
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "184874",
+        "35646"
+      ],
+      "num_remaining": 18,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 77,
+        "rewritten_query_length": 77
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "184874",
+        "35646",
+        "184906"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 77,
+        "rewritten_query_length": 77
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "184874",
+        "35646",
+        "184906"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 77,
+        "rewritten_query_length": 77
+      }
+    }
+  ],
+  "actions": [
+    {
+      "doc_id": "184874",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "35646",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "184906",
+      "action_type": "select"
+    }
+  ],
+  "rewards": [
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    }
+  ]
+}

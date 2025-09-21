@@ -1,0 +1,101 @@
+{
+  "episode_id": "episode_45_6626",
+  "query": "What are some notable opinions he has issued?",
+  "final_answer": null,
+  "metrics": {
+    "total_reward": 0.30000000000000004,
+    "avg_reward": 0.10000000000000002,
+    "episode_length": 3,
+    "num_documents_selected": 3,
+    "final_step": 3
+  },
+  "states": [
+    {
+      "step": 1,
+      "selected_doc_ids": [
+        "28247"
+      ],
+      "num_remaining": 19,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 45,
+        "rewritten_query_length": 45
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "28247",
+        "25071"
+      ],
+      "num_remaining": 18,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 45,
+        "rewritten_query_length": 45
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "28247",
+        "25071",
+        "118308"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 45,
+        "rewritten_query_length": 45
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "28247",
+        "25071",
+        "118308"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 45,
+        "rewritten_query_length": 45
+      }
+    }
+  ],
+  "actions": [
+    {
+      "doc_id": "28247",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "25071",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "118308",
+      "action_type": "select"
+    }
+  ],
+  "rewards": [
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    }
+  ]
+}

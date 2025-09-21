@@ -1,0 +1,101 @@
+{
+  "episode_id": "episode_121_2118",
+  "query": "What methods have researchers like Murakami and Oguchi used to specifically define and identify actual product lifetimes?",
+  "final_answer": null,
+  "metrics": {
+    "total_reward": 0.30000000000000004,
+    "avg_reward": 0.10000000000000002,
+    "episode_length": 3,
+    "num_documents_selected": 3,
+    "final_step": 3
+  },
+  "states": [
+    {
+      "step": 1,
+      "selected_doc_ids": [
+        "114982"
+      ],
+      "num_remaining": 19,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 121,
+        "rewritten_query_length": 121
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "114982",
+        "20052"
+      ],
+      "num_remaining": 18,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 121,
+        "rewritten_query_length": 121
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "114982",
+        "20052",
+        "92999"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 121,
+        "rewritten_query_length": 121
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "114982",
+        "20052",
+        "92999"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 121,
+        "rewritten_query_length": 121
+      }
+    }
+  ],
+  "actions": [
+    {
+      "doc_id": "114982",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "20052",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "92999",
+      "action_type": "select"
+    }
+  ],
+  "rewards": [
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    }
+  ]
+}

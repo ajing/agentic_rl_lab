@@ -1,0 +1,101 @@
+{
+  "episode_id": "episode_96_3229",
+  "query": "Could you explain the differences between actual and expected product lifetimes in this context?",
+  "final_answer": null,
+  "metrics": {
+    "total_reward": 0.30000000000000004,
+    "avg_reward": 0.10000000000000002,
+    "episode_length": 3,
+    "num_documents_selected": 3,
+    "final_step": 3
+  },
+  "states": [
+    {
+      "step": 1,
+      "selected_doc_ids": [
+        "158541"
+      ],
+      "num_remaining": 19,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 96,
+        "rewritten_query_length": 96
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "158541",
+        "174517"
+      ],
+      "num_remaining": 18,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 96,
+        "rewritten_query_length": 96
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "158541",
+        "174517",
+        "734"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 96,
+        "rewritten_query_length": 96
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "158541",
+        "174517",
+        "734"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 96,
+        "rewritten_query_length": 96
+      }
+    }
+  ],
+  "actions": [
+    {
+      "doc_id": "158541",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "174517",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "734",
+      "action_type": "select"
+    }
+  ],
+  "rewards": [
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    }
+  ]
+}

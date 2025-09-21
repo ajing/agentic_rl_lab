@@ -13,7 +13,7 @@ from dataclasses import dataclass
 import numpy as np
 from pathlib import Path
 
-from ..env.rag_environment import RAGEnvironment, RLAction, RLEpisode, ConversationTurn
+from src.env.rag_environment import RAGEnvironment, RLAction, RLEpisode, ConversationTurn
 
 logger = logging.getLogger(__name__)
 

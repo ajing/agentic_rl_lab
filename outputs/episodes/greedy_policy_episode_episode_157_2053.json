@@ -1,0 +1,101 @@
+{
+  "episode_id": "episode_157_2053",
+  "query": "What is the purpose of the National Snaffle Bit Association Hall of Fame, and how does it recognize contributions to the equestrian sport of pleasure riding?",
+  "final_answer": null,
+  "metrics": {
+    "total_reward": 0.30000000000000004,
+    "avg_reward": 0.10000000000000002,
+    "episode_length": 3,
+    "num_documents_selected": 3,
+    "final_step": 3
+  },
+  "states": [
+    {
+      "step": 1,
+      "selected_doc_ids": [
+        "64164"
+      ],
+      "num_remaining": 19,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 157,
+        "rewritten_query_length": 157
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "64164",
+        "145374"
+      ],
+      "num_remaining": 18,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 157,
+        "rewritten_query_length": 157
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "64164",
+        "145374",
+        "194613"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 157,
+        "rewritten_query_length": 157
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "64164",
+        "145374",
+        "194613"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 157,
+        "rewritten_query_length": 157
+      }
+    }
+  ],
+  "actions": [
+    {
+      "doc_id": "64164",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "145374",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "194613",
+      "action_type": "select"
+    }
+  ],
+  "rewards": [
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    }
+  ]
+}

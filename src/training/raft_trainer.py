@@ -15,11 +15,11 @@ import numpy as np
 import torch
 from torch.utils.data import Dataset, DataLoader
 
-from ..env.rag_environment import RAGEnvironment, RAGAction, ConversationTurn
-from ..policy.episode_runner import EpisodeRunner, PolicyConfig, EpisodeResult
-from ..reward.reward_model import LightweightRewardModel
-from ..reward.reward_shaping import RewardShaper
-from ..training.dpo_trainer import DPOTrainerWrapper, TrainingConfig
+from src.env.rag_environment import RAGEnvironment, RAGAction, ConversationTurn
+from src.policy.episode_runner import EpisodeRunner, PolicyConfig, EpisodeResult
+from src.reward.reward_model import LightweightRewardModel
+from src.reward.reward_shaping import RewardShaper
+from src.training.dpo_trainer import DPOTrainerWrapper, TrainingConfig
 
 logger = logging.getLogger(__name__)
 

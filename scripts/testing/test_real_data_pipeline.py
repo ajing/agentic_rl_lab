@@ -9,14 +9,14 @@ import sys
 from pathlib import Path
 
 # Add src to path
-sys.path.append(str(Path(__file__).resolve().parents[1]))
+sys.path.append(str(Path(__file__).resolve().parents[2]))
 
 def test_coral_data_loading():
     """Test loading CORAL data."""
     logger = logging.getLogger(__name__)
     
     try:
-        from scripts.generate_expert_trajectories import ExpertTrajectoryGenerator
+        from scripts.week5_6.generate_expert_trajectories import ExpertTrajectoryGenerator
         
         # Initialize generator
         generator = ExpertTrajectoryGenerator(
@@ -53,7 +53,7 @@ def test_components_setup():
     logger = logging.getLogger(__name__)
     
     try:
-        from scripts.generate_expert_trajectories import ExpertTrajectoryGenerator
+        from scripts.week5_6.generate_expert_trajectories import ExpertTrajectoryGenerator
         
         # Initialize generator
         generator = ExpertTrajectoryGenerator(
@@ -80,7 +80,7 @@ def test_trajectory_generation():
     logger = logging.getLogger(__name__)
     
     try:
-        from scripts.generate_expert_trajectories import ExpertTrajectoryGenerator
+        from scripts.week5_6.generate_expert_trajectories import ExpertTrajectoryGenerator
         
         # Initialize generator
         generator = ExpertTrajectoryGenerator(
@@ -131,7 +131,7 @@ def test_preference_dataset_building():
     logger = logging.getLogger(__name__)
     
     try:
-        from scripts.build_preference_dataset import PreferenceDatasetBuilder
+        from scripts.week5_6.build_preference_dataset import PreferenceDatasetBuilder
         
         # Initialize builder
         builder = PreferenceDatasetBuilder(
