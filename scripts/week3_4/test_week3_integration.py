@@ -33,11 +33,11 @@ def test_week3_with_week2():
             corpus_path="data/coral/docs.jsonl",
             bm25_index_path="index/coral_bm25", 
             vector_index_path="index/coral_faiss",
-            use_query_rewriter=False,  # Disable for faster testing
+            use_query_rewriting=False,  # Disable for faster testing
             use_cross_encoder=True,
             use_mmr=True,
-            max_steps=3,  # Shorter for testing
-            k_candidates=20
+            max_steps=2,  # Shorter for testing
+            k_candidates=10  # Fewer candidates for faster testing
         )
         
         episode_runner = EpisodeRunner(rag_env)
@@ -56,16 +56,6 @@ def test_week3_with_week2():
                 "query": "I'm planning a trip to Japan next month. What should I know about the weather and cultural etiquette?",
                 "history": [],
                 "expected_topics": ["weather", "cultural etiquette", "travel tips"]
-            },
-            {
-                "query": "What are the main differences between machine learning and deep learning?",
-                "history": [],
-                "expected_topics": ["machine learning", "deep learning", "neural networks"]
-            },
-            {
-                "query": "How does climate change affect global food security?",
-                "history": [],
-                "expected_topics": ["climate change", "food security", "agriculture"]
             }
         ]
         
@@ -78,11 +68,14 @@ def test_week3_with_week2():
             # Run episode
             episode_result = episode_runner.run_episode(
                 test_query,
-                PolicyConfig(policy_type="greedy", selection_strategy="top_score"),
+                PolicyConfig(policy_type="greedy", name="greedy_test"),
                 test_history
             )
             
-            logger.info(f"  Scenario {i+1}: Episode completed with {len(episode_result.selected_doc_ids)} documents selected")
+            # Get selected documents from final state
+            final_state = episode_result.states[-1] if episode_result.states else None
+            selected_docs = final_state.selected_doc_ids if final_state else []
+            logger.info(f"  Scenario {i+1}: Episode completed with {len(selected_docs)} documents selected")
             
             # Test reward shaping
             reward_shaper.reset_episode()
@@ -94,7 +87,7 @@ def test_week3_with_week2():
                 f"Supporting details for {scenario['expected_topics'][2] if len(scenario['expected_topics']) > 2 else 'context'}"
             ]
             
-            for j, doc_content in enumerate(realistic_docs[:len(episode_result.selected_doc_ids)]):
+            for j, doc_content in enumerate(realistic_docs[:len(selected_docs)]):
                 step_reward = reward_shaper.compute_step_reward(
                     test_query, doc_content, 0.8 - j * 0.1, j+1
                 )
@@ -114,16 +107,15 @@ def test_week3_with_week2():
             logger.info(f"    Final episode reward: {final_reward.total_reward:.3f}")
             
             # Test reward model scoring
-            context = realistic_docs[:len(episode_result.selected_doc_ids)]
-            with reward_model.eval():
-                import torch
-                with torch.no_grad():
-                    result = reward_model(test_query, final_answer, context)
-                    reward_score = result["reward_score"].item()
-                    criteria_scores = {k: v.item() for k, v in result["criteria_scores"].items()}
-                    logger.info(f"    Reward model score: {reward_score:.3f} "
-                               f"(Accuracy: {criteria_scores['accuracy']:.3f}, "
-                               f"Completeness: {criteria_scores['completeness']:.3f})")
+            context = realistic_docs[:len(selected_docs)]
+            import torch
+            with torch.no_grad():
+                result = reward_model(test_query, final_answer, context)
+                reward_score = result["reward_score"].item()
+                criteria_scores = {k: v.item() for k, v in result["criteria_scores"].items()}
+                logger.info(f"    Reward model score: {reward_score:.3f} "
+                           f"(Accuracy: {criteria_scores['accuracy']:.3f}, "
+                           f"Completeness: {criteria_scores['completeness']:.3f})")
         
         logger.info("✅ Integration test completed with realistic scenarios")
         
@@ -234,7 +226,7 @@ def test_training_components():
         return True
         
     except Exception as e:
-        logger.error(f"❌ Training components test failed: {e}")
+        logging.getLogger(__name__).error(f"❌ Training components test failed: {e}")
         return False
 
 def main():

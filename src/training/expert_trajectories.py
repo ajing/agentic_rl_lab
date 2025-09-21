@@ -13,8 +13,8 @@ from dataclasses import dataclass, asdict
 from pathlib import Path
 import numpy as np
 
-from src.env.rag_environment import RAGEnvironment, RAGState, RAGAction, ConversationTurn
-from src.policy.episode_runner import EpisodeRunner, PolicyConfig, EpisodeResult
+from src.env.rag_environment import RAGEnvironment, RLState, RLAction, ConversationTurn
+from src.policy.episode_runner import EpisodeRunner, PolicyConfig
 from src.reward.reward_shaping import RewardShaper, RewardConfig
 from src.reward.llm_judge import LLMJudge
 
@@ -26,8 +26,8 @@ class ExpertTrajectory:
     """Represents an expert trajectory for BC training."""
     query: str
     conversation_history: List[ConversationTurn]
-    states: List[RAGState]
-    actions: List[RAGAction]
+    states: List[RLState]
+    actions: List[RLAction]
     rewards: List[float]
     final_answer: str
     total_reward: float
@@ -176,7 +176,7 @@ class ExpertTrajectoryGenerator:
             logger.error(f"Error generating expert trajectory: {e}")
             return None
     
-    def _generate_answer_from_trajectory(self, episode_result: EpisodeResult) -> str:
+    def _generate_answer_from_trajectory(self, episode_result) -> str:
         """
         Generate a final answer from the episode trajectory.
         
@@ -211,8 +211,8 @@ class ExpertTrajectoryGenerator:
     
     def _compute_shaped_rewards(self, 
                               query: str, 
-                              states: List[RAGState], 
-                              actions: List[RAGAction],
+                              states: List[RLState], 
+                              actions: List[RLAction],
                               final_answer: str) -> List[float]:
         """
         Compute shaped rewards for the trajectory.

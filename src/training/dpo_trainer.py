@@ -13,6 +13,8 @@ from dataclasses import dataclass, asdict
 from pathlib import Path
 import numpy as np
 
+logger = logging.getLogger(__name__)
+
 # TRL imports
 try:
     from trl import DPOTrainer, DPOTrainingArguments, DPOConfig
@@ -42,8 +44,6 @@ try:
 except ImportError:
     PEFT_AVAILABLE = False
     logger.warning("PEFT not available. Install with: pip install peft")
-
-logger = logging.getLogger(__name__)
 
 
 @dataclass
