@@ -223,8 +223,8 @@ def test_episode_runner():
         
         # Test different policies
         policies = [
-            PolicyConfig("random", "random"),
-            PolicyConfig("greedy", "greedy")
+            PolicyConfig(policy_type="random", selection_strategy="random"),
+            PolicyConfig(policy_type="greedy", selection_strategy="top_score")
         ]
         
         results = runner.compare_policies(query, policies, num_runs=2)
@@ -267,7 +267,7 @@ def test_coral_integration(coral_data_path: str):
                 
                 if query:
                     # Run episode
-                    policy_config = PolicyConfig("random", "random")
+                    policy_config = PolicyConfig(policy_type="random", selection_strategy="random")
                     episode = runner.run_episode(query, policy_config, save_episode=False)
                     
                     logger.info(f"  Query: {query[:50]}...")

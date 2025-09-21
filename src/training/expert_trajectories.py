@@ -5,6 +5,7 @@ Generates high-quality expert trajectories using strong baseline policies
 to provide training data for BC pretraining.
 """
 
+import copy
 import json
 import logging
 import random
@@ -13,7 +14,13 @@ from dataclasses import dataclass, asdict
 from pathlib import Path
 import numpy as np
 
-from src.env.rag_environment import RAGEnvironment, RLState, RLAction, ConversationTurn
+from src.env.rag_environment import (
+    RAGEnvironment,
+    RLState,
+    RLAction,
+    RLEpisode,
+    ConversationTurn,
+)
 from src.policy.episode_runner import EpisodeRunner, PolicyConfig
 from src.reward.reward_shaping import RewardShaper, RewardConfig
 from src.reward.llm_judge import LLMJudge
@@ -139,9 +146,9 @@ class ExpertTrajectoryGenerator:
             episode_result = self.episode_runner.run_episode(query, policy_config, conversation_history)
             
             # Extract trajectory components
-            states = [step[0] for step in episode_result.trajectory]
-            actions = [step[1] for step in episode_result.trajectory]
-            rewards = [step[2].step_reward for step in episode_result.trajectory]
+            states = [copy.deepcopy(state) for state in episode_result.states]
+            actions = [copy.deepcopy(action) for action in episode_result.actions]
+            rewards = [step.reward.total_reward for step in episode_result.trajectory]
             
             # Generate final answer from selected documents
             final_answer = self._generate_answer_from_trajectory(episode_result)
@@ -149,7 +156,7 @@ class ExpertTrajectoryGenerator:
             # Compute shaped rewards if enabled
             if self.config.use_reward_shaping and self.reward_shaper:
                 shaped_rewards = self._compute_shaped_rewards(
-                    query, states, actions, final_answer
+                    query, episode_result, final_answer
                 )
                 rewards = shaped_rewards
             
@@ -188,7 +195,8 @@ class ExpertTrajectoryGenerator:
         """
         # Simple implementation: concatenate selected document contents
         # In practice, this would use a generator model
-        selected_docs = episode_result.final_state.selected_documents
+        final_state = episode_result.final_state
+        selected_docs = final_state.selected_documents if final_state else []
         
         if not selected_docs:
             return "I couldn't find relevant information to answer your question."
@@ -209,10 +217,9 @@ class ExpertTrajectoryGenerator:
         
         return answer
     
-    def _compute_shaped_rewards(self, 
-                              query: str, 
-                              states: List[RLState], 
-                              actions: List[RLAction],
+    def _compute_shaped_rewards(self,
+                              query: str,
+                              episode: RLEpisode,
                               final_answer: str) -> List[float]:
         """
         Compute shaped rewards for the trajectory.
@@ -227,42 +234,53 @@ class ExpertTrajectoryGenerator:
             List of shaped rewards
         """
         if not self.reward_shaper:
-            return [0.0] * len(actions)
+            return [0.0] * len(episode.actions)
         
         # Reset reward shaper
         self.reward_shaper.reset_episode()
         
         shaped_rewards = []
         
-        for i, (state, action) in enumerate(zip(states, actions)):
-            if action.action_type == "select_document" and action.document_id:
-                # Find the selected document
-                selected_doc = None
-                for doc in state.candidate_pool:
-                    if doc.doc_id == action.document_id:
-                        selected_doc = doc
-                        break
-                
-                if selected_doc:
-                    # Compute step reward
-                    step_reward_components = self.reward_shaper.compute_step_reward(
-                        query, selected_doc.content, 
-                        selected_doc.bm25_score + selected_doc.vector_score, i
-                    )
-                    shaped_rewards.append(step_reward_components.total_reward)
-                else:
-                    shaped_rewards.append(0.0)
-            else:
+        for step_index, step in enumerate(episode.trajectory):
+            action = step.action
+            if action.action_type != "select":
                 shaped_rewards.append(0.0)
-        
+                continue
+
+            selected_doc_id = step.info.get("selected_doc_id")
+            if not selected_doc_id:
+                shaped_rewards.append(0.0)
+                continue
+
+            selected_doc = next(
+                (doc for doc in step.post_state.selected_documents if doc.doc_id == selected_doc_id),
+                None,
+            )
+
+            if not selected_doc:
+                shaped_rewards.append(0.0)
+                continue
+
+            base_score = selected_doc.bm25_score + selected_doc.vector_score
+            if base_score <= 0.0:
+                base_score = selected_doc.rrf_score
+
+            step_reward_components = self.reward_shaper.compute_step_reward(
+                query,
+                selected_doc.content,
+                base_score,
+                step_index,
+            )
+            shaped_rewards.append(step_reward_components.total_reward)
+
         # Add final reward
         if shaped_rewards:
             final_reward_components = self.reward_shaper.compute_episode_reward(
-                query, final_answer
+                query,
+                final_answer,
             )
-            # Add final reward to the last step
             shaped_rewards[-1] += final_reward_components.final_reward
-        
+
         return shaped_rewards
     
     def filter_trajectory_quality(self, trajectory: ExpertTrajectory) -> bool:

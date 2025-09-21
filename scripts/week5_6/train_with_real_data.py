@@ -419,12 +419,17 @@ class RealDataTrainer:
                                 history
                             )
                             
+                            # Get final state and calculate total reward
+                            final_state = episode_result.states[-1] if episode_result.states else None
+                            selected_doc_ids = final_state.selected_doc_ids if final_state else []
+                            total_reward = sum(r.total_reward for r in episode_result.rewards) if episode_result.rewards else 0.0
+                            
                             policy_results.append({
                                 'conversation_id': conv['conversation_id'],
                                 'query': last_user_turn.text,
-                                'num_documents_selected': len(episode_result.selected_doc_ids),
-                                'total_reward': episode_result.total_reward,
-                                'episode_length': episode_result.final_state.current_step
+                                'num_documents_selected': len(selected_doc_ids),
+                                'total_reward': total_reward,
+                                'episode_length': final_state.step if final_state else 0
                             })
                         except Exception as e:
                             logger.warning(f"Error evaluating conversation {conv['conversation_id']}: {e}")
