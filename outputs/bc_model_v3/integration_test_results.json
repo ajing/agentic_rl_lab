@@ -1,0 +1,104 @@
+[
+  {
+    "query": "Who won the 2016 World Series?",
+    "candidates": [
+      {
+        "doc_id": "doc_1",
+        "content": "High relevance document about Who won the 2016 Wor...",
+        "rrf_score": 0.9,
+        "bm25_score": 0.8,
+        "vector_score": 0.85
+      },
+      {
+        "doc_id": "doc_2",
+        "content": "Medium relevance document on Who won the 201...",
+        "rrf_score": 0.6,
+        "bm25_score": 0.7,
+        "vector_score": 0.65
+      },
+      {
+        "doc_id": "doc_3",
+        "content": "Lower relevance document about Who won the 2016 World Se...",
+        "rrf_score": 0.4,
+        "bm25_score": 0.5,
+        "vector_score": 0.55
+      }
+    ],
+    "predicted_idx": 1,
+    "selected_doc": {
+      "doc_id": "doc_2",
+      "content": "Medium relevance document on Who won the 201...",
+      "rrf_score": 0.6,
+      "bm25_score": 0.7,
+      "vector_score": 0.65
+    }
+  },
+  {
+    "query": "What is the capital of France?",
+    "candidates": [
+      {
+        "doc_id": "doc_1",
+        "content": "High relevance document about What is the capital ...",
+        "rrf_score": 0.9,
+        "bm25_score": 0.8,
+        "vector_score": 0.85
+      },
+      {
+        "doc_id": "doc_2",
+        "content": "Medium relevance document on What is the cap...",
+        "rrf_score": 0.6,
+        "bm25_score": 0.7,
+        "vector_score": 0.65
+      },
+      {
+        "doc_id": "doc_3",
+        "content": "Lower relevance document about What is the capital of Fr...",
+        "rrf_score": 0.4,
+        "bm25_score": 0.5,
+        "vector_score": 0.55
+      }
+    ],
+    "predicted_idx": 1,
+    "selected_doc": {
+      "doc_id": "doc_2",
+      "content": "Medium relevance document on What is the cap...",
+      "rrf_score": 0.6,
+      "bm25_score": 0.7,
+      "vector_score": 0.65
+    }
+  },
+  {
+    "query": "How does photosynthesis work?",
+    "candidates": [
+      {
+        "doc_id": "doc_1",
+        "content": "High relevance document about How does photosynthe...",
+        "rrf_score": 0.9,
+        "bm25_score": 0.8,
+        "vector_score": 0.85
+      },
+      {
+        "doc_id": "doc_2",
+        "content": "Medium relevance document on How does photos...",
+        "rrf_score": 0.6,
+        "bm25_score": 0.7,
+        "vector_score": 0.65
+      },
+      {
+        "doc_id": "doc_3",
+        "content": "Lower relevance document about How does photosynthesis w...",
+        "rrf_score": 0.4,
+        "bm25_score": 0.5,
+        "vector_score": 0.55
+      }
+    ],
+    "predicted_idx": 1,
+    "selected_doc": {
+      "doc_id": "doc_2",
+      "content": "Medium relevance document on How does photos...",
+      "rrf_score": 0.6,
+      "bm25_score": 0.7,
+      "vector_score": 0.65
+    }
+  }
+]
