@@ -8,12 +8,13 @@ and generating trajectories for behavioral cloning.
 import logging
 import random
 import json
-from typing import List, Dict, Tuple, Optional, Any
+from typing import List, Dict, Optional, Any
 from dataclasses import dataclass
 import numpy as np
 from pathlib import Path
 
 from src.env.rag_environment import RAGEnvironment, RLAction, RLEpisode, ConversationTurn
+from src.policy.llm_expert_policy import LLMExpertPolicy
 
 logger = logging.getLogger(__name__)
 
@@ -151,7 +152,8 @@ class EpisodeRunner:
         self.policies = {
             "random": RandomPolicy,
             "greedy": GreedyPolicy,
-            "epsilon_greedy": EpsilonGreedyPolicy
+            "epsilon_greedy": EpsilonGreedyPolicy,
+            "llm_expert": LLMExpertPolicy
         }
         
         logger.info(f"Initialized episode runner with output directory: {self.output_dir}")
@@ -182,11 +184,20 @@ class EpisodeRunner:
             policy = GreedyPolicy()
         elif policy_config.policy_type == "epsilon_greedy":
             policy = EpsilonGreedyPolicy(epsilon=policy_config.epsilon)
+        elif policy_config.policy_type == "llm_expert":
+            # Handle LLM expert policy with special configuration
+            if hasattr(policy_config, 'llm_config'):
+                policy = LLMExpertPolicy(policy_config.llm_config)
+            else:
+                # Create default LLM expert policy
+                from src.policy.llm_expert_policy import LLMExpertConfig
+                llm_config = LLMExpertConfig()
+                policy = LLMExpertPolicy(llm_config)
         else:
             raise ValueError(f"Unknown policy type: {policy_config.policy_type}")
         
         # Reset environment
-        state = self.env.reset(query, conversation_history)
+        self.env.reset(query, conversation_history)
         
         # Override max steps if specified
         original_max_steps = self.env.max_steps
@@ -206,7 +217,12 @@ class EpisodeRunner:
                 state_features = self.env.get_state_features()
                 
                 # Select action
-                action = policy.select_action(valid_actions, state_features)
+                if policy_config.policy_type == "llm_expert":
+                    # LLM expert policy needs the current state
+                    action = policy.select_action(valid_actions, self.env.current_state, state_features)
+                else:
+                    # Other policies use the standard interface
+                    action = policy.select_action(valid_actions, state_features)
                 
                 # Take step
                 next_state, reward, done, info = self.env.step(action)
