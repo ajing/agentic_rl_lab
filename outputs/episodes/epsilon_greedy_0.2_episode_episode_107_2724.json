@@ -1,0 +1,101 @@
+{
+  "episode_id": "episode_107_2724",
+  "query": "When was he drafted by the Pittsburgh Steelers and what was his position among running backs in that draft?",
+  "final_answer": null,
+  "metrics": {
+    "total_reward": 0.30000000000000004,
+    "avg_reward": 0.10000000000000002,
+    "episode_length": 3,
+    "num_documents_selected": 3,
+    "final_step": 3
+  },
+  "states": [
+    {
+      "step": 1,
+      "selected_doc_ids": [
+        "4527"
+      ],
+      "num_remaining": 19,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 107,
+        "rewritten_query_length": 107
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "4527",
+        "103146"
+      ],
+      "num_remaining": 18,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 107,
+        "rewritten_query_length": 107
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "4527",
+        "103146",
+        "114551"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 107,
+        "rewritten_query_length": 107
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "4527",
+        "103146",
+        "114551"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 107,
+        "rewritten_query_length": 107
+      }
+    }
+  ],
+  "actions": [
+    {
+      "doc_id": "4527",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "103146",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "114551",
+      "action_type": "select"
+    }
+  ],
+  "rewards": [
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    }
+  ]
+}

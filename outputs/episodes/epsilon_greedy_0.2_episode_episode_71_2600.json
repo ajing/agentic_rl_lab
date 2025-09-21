@@ -1,0 +1,101 @@
+{
+  "episode_id": "episode_71_2600",
+  "query": "Can you describe the themes and setting of her music video for \"Human\"?",
+  "final_answer": null,
+  "metrics": {
+    "total_reward": 0.30000000000000004,
+    "avg_reward": 0.10000000000000002,
+    "episode_length": 3,
+    "num_documents_selected": 3,
+    "final_step": 3
+  },
+  "states": [
+    {
+      "step": 1,
+      "selected_doc_ids": [
+        "24110"
+      ],
+      "num_remaining": 19,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 71,
+        "rewritten_query_length": 71
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "24110",
+        "87535"
+      ],
+      "num_remaining": 18,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 71,
+        "rewritten_query_length": 71
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "24110",
+        "87535",
+        "103125"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 71,
+        "rewritten_query_length": 71
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "24110",
+        "87535",
+        "103125"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 71,
+        "rewritten_query_length": 71
+      }
+    }
+  ],
+  "actions": [
+    {
+      "doc_id": "24110",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "87535",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "103125",
+      "action_type": "select"
+    }
+  ],
+  "rewards": [
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    }
+  ]
+}

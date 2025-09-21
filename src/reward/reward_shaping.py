@@ -15,7 +15,7 @@ from dataclasses import dataclass
 import torch
 
 from .reward_model import LightweightRewardModel
-from ..reranker.mmr import MMRDeduplicator
+from src.reranker.mmr import MMRDeduplicator
 
 logger = logging.getLogger(__name__)
 

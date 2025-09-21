@@ -1,0 +1,101 @@
+{
+  "episode_id": "episode_124_7013",
+  "query": "Can you tell me about the specific tax incentives for photovoltaic solar energy under section 12B of the tax act since 2016?",
+  "final_answer": null,
+  "metrics": {
+    "total_reward": 0.30000000000000004,
+    "avg_reward": 0.10000000000000002,
+    "episode_length": 3,
+    "num_documents_selected": 3,
+    "final_step": 3
+  },
+  "states": [
+    {
+      "step": 1,
+      "selected_doc_ids": [
+        "138657"
+      ],
+      "num_remaining": 19,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 124,
+        "rewritten_query_length": 124
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "138657",
+        "149228"
+      ],
+      "num_remaining": 18,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 124,
+        "rewritten_query_length": 124
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "138657",
+        "149228",
+        "2094"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 124,
+        "rewritten_query_length": 124
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "138657",
+        "149228",
+        "2094"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 124,
+        "rewritten_query_length": 124
+      }
+    }
+  ],
+  "actions": [
+    {
+      "doc_id": "138657",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "149228",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "2094",
+      "action_type": "select"
+    }
+  ],
+  "rewards": [
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    }
+  ]
+}

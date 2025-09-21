@@ -9,7 +9,7 @@ import sys
 from pathlib import Path
 
 # Add src to path
-sys.path.append(str(Path(__file__).resolve().parents[1]))
+sys.path.append(str(Path(__file__).resolve().parents[2]))
 
 def test_imports():
     """Test that all Week 3-4 components can be imported."""

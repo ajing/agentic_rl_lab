@@ -1,0 +1,101 @@
+{
+  "episode_id": "episode_121_9719",
+  "query": "Can you tell me about the attempt to make an American Godzilla film in the 1980s and the details of its production plans?",
+  "final_answer": null,
+  "metrics": {
+    "total_reward": 0.30000000000000004,
+    "avg_reward": 0.10000000000000002,
+    "episode_length": 3,
+    "num_documents_selected": 3,
+    "final_step": 3
+  },
+  "states": [
+    {
+      "step": 1,
+      "selected_doc_ids": [
+        "2270"
+      ],
+      "num_remaining": 19,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 121,
+        "rewritten_query_length": 121
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "2270",
+        "163722"
+      ],
+      "num_remaining": 18,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 121,
+        "rewritten_query_length": 121
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "2270",
+        "163722",
+        "3671"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 121,
+        "rewritten_query_length": 121
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "2270",
+        "163722",
+        "3671"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 121,
+        "rewritten_query_length": 121
+      }
+    }
+  ],
+  "actions": [
+    {
+      "doc_id": "2270",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "163722",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "3671",
+      "action_type": "select"
+    }
+  ],
+  "rewards": [
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    }
+  ]
+}

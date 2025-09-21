@@ -21,7 +21,7 @@ from dataclasses import asdict
 
 # Import our components
 import sys
-sys.path.append(str(Path(__file__).resolve().parents[1]))
+sys.path.append(str(Path(__file__).resolve().parents[2]))
 
 from src.reward.llm_judge import LLMJudge, AnswerPair, PreferenceResult
 from src.reward.reward_model import LightweightRewardModel, RewardExample, RewardModelTrainer

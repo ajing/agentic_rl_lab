@@ -1,0 +1,101 @@
+{
+  "episode_id": "episode_27_9967",
+  "query": "Can you outline his career?",
+  "final_answer": null,
+  "metrics": {
+    "total_reward": 0.30000000000000004,
+    "avg_reward": 0.10000000000000002,
+    "episode_length": 3,
+    "num_documents_selected": 3,
+    "final_step": 3
+  },
+  "states": [
+    {
+      "step": 1,
+      "selected_doc_ids": [
+        "98231"
+      ],
+      "num_remaining": 19,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 27,
+        "rewritten_query_length": 27
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "98231",
+        "145788"
+      ],
+      "num_remaining": 18,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 27,
+        "rewritten_query_length": 27
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "98231",
+        "145788",
+        "93059"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 27,
+        "rewritten_query_length": 27
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "98231",
+        "145788",
+        "93059"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 27,
+        "rewritten_query_length": 27
+      }
+    }
+  ],
+  "actions": [
+    {
+      "doc_id": "98231",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "145788",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "93059",
+      "action_type": "select"
+    }
+  ],
+  "rewards": [
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    }
+  ]
+}

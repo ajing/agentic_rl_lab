@@ -1,0 +1,101 @@
+{
+  "episode_id": "episode_98_3815",
+  "query": "And how does this air quality relate to issues like dust and pests, and their health implications?",
+  "final_answer": null,
+  "metrics": {
+    "total_reward": 0.30000000000000004,
+    "avg_reward": 0.10000000000000002,
+    "episode_length": 3,
+    "num_documents_selected": 3,
+    "final_step": 3
+  },
+  "states": [
+    {
+      "step": 1,
+      "selected_doc_ids": [
+        "86481"
+      ],
+      "num_remaining": 19,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 98,
+        "rewritten_query_length": 98
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "86481",
+        "86504"
+      ],
+      "num_remaining": 18,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 98,
+        "rewritten_query_length": 98
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "86481",
+        "86504",
+        "5480"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 98,
+        "rewritten_query_length": 98
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "86481",
+        "86504",
+        "5480"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 98,
+        "rewritten_query_length": 98
+      }
+    }
+  ],
+  "actions": [
+    {
+      "doc_id": "86481",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "86504",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "5480",
+      "action_type": "select"
+    }
+  ],
+  "rewards": [
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    }
+  ]
+}

@@ -13,10 +13,10 @@ from dataclasses import dataclass, asdict
 from pathlib import Path
 import numpy as np
 
-from ..env.rag_environment import RAGEnvironment, RAGState, RAGAction, ConversationTurn
-from ..policy.episode_runner import EpisodeRunner, PolicyConfig, EpisodeResult
-from ..reward.reward_shaping import RewardShaper, RewardConfig
-from ..reward.llm_judge import LLMJudge
+from src.env.rag_environment import RAGEnvironment, RAGState, RAGAction, ConversationTurn
+from src.policy.episode_runner import EpisodeRunner, PolicyConfig, EpisodeResult
+from src.reward.reward_shaping import RewardShaper, RewardConfig
+from src.reward.llm_judge import LLMJudge
 
 logger = logging.getLogger(__name__)
 
@@ -289,7 +289,7 @@ class ExpertTrajectoryGenerator:
         if self.config.use_llm_judge and self.llm_judge:
             try:
                 # Create a simple answer pair for evaluation
-                from ..reward.llm_judge import AnswerPair
+                from src.reward.llm_judge import AnswerPair
                 
                 # Use a dummy rejected answer for comparison
                 dummy_rejected = "I don't have enough information to answer this question."

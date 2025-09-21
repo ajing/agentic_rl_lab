@@ -1,0 +1,101 @@
+{
+  "episode_id": "episode_137_4720",
+  "query": "What was his role in Boris Johnson's administration and what were some notable events and controversies during his time as chief adviser?",
+  "final_answer": null,
+  "metrics": {
+    "total_reward": 0.30000000000000004,
+    "avg_reward": 0.10000000000000002,
+    "episode_length": 3,
+    "num_documents_selected": 3,
+    "final_step": 3
+  },
+  "states": [
+    {
+      "step": 1,
+      "selected_doc_ids": [
+        "101846"
+      ],
+      "num_remaining": 19,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 137,
+        "rewritten_query_length": 137
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "101846",
+        "116386"
+      ],
+      "num_remaining": 18,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 137,
+        "rewritten_query_length": 137
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "101846",
+        "116386",
+        "143856"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 137,
+        "rewritten_query_length": 137
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "101846",
+        "116386",
+        "143856"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 137,
+        "rewritten_query_length": 137
+      }
+    }
+  ],
+  "actions": [
+    {
+      "doc_id": "101846",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "116386",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "143856",
+      "action_type": "select"
+    }
+  ],
+  "rewards": [
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    }
+  ]
+}

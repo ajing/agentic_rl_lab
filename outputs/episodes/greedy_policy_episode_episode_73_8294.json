@@ -1,0 +1,101 @@
+{
+  "episode_id": "episode_73_8294",
+  "query": "Could you tell me more about her main research areas and published works?",
+  "final_answer": null,
+  "metrics": {
+    "total_reward": 0.30000000000000004,
+    "avg_reward": 0.10000000000000002,
+    "episode_length": 3,
+    "num_documents_selected": 3,
+    "final_step": 3
+  },
+  "states": [
+    {
+      "step": 1,
+      "selected_doc_ids": [
+        "70014"
+      ],
+      "num_remaining": 19,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 73,
+        "rewritten_query_length": 73
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "70014",
+        "153759"
+      ],
+      "num_remaining": 18,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 73,
+        "rewritten_query_length": 73
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "70014",
+        "153759",
+        "191752"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 73,
+        "rewritten_query_length": 73
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "70014",
+        "153759",
+        "191752"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 73,
+        "rewritten_query_length": 73
+      }
+    }
+  ],
+  "actions": [
+    {
+      "doc_id": "70014",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "153759",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "191752",
+      "action_type": "select"
+    }
+  ],
+  "rewards": [
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    }
+  ]
+}

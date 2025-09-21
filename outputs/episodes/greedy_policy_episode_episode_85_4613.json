@@ -1,0 +1,101 @@
+{
+  "episode_id": "episode_85_4613",
+  "query": "Could you give an overview of the 17 individual goals related to eradicating poverty?",
+  "final_answer": null,
+  "metrics": {
+    "total_reward": 0.30000000000000004,
+    "avg_reward": 0.10000000000000002,
+    "episode_length": 3,
+    "num_documents_selected": 3,
+    "final_step": 3
+  },
+  "states": [
+    {
+      "step": 1,
+      "selected_doc_ids": [
+        "15142"
+      ],
+      "num_remaining": 19,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 85,
+        "rewritten_query_length": 85
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "15142",
+        "26574"
+      ],
+      "num_remaining": 18,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 85,
+        "rewritten_query_length": 85
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "15142",
+        "26574",
+        "20852"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 85,
+        "rewritten_query_length": 85
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "15142",
+        "26574",
+        "20852"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 85,
+        "rewritten_query_length": 85
+      }
+    }
+  ],
+  "actions": [
+    {
+      "doc_id": "15142",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "26574",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "20852",
+      "action_type": "select"
+    }
+  ],
+  "rewards": [
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    }
+  ]
+}

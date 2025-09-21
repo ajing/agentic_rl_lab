@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import List, Dict, Any
 
 # Add src to path
-sys.path.append(str(Path(__file__).resolve().parents[1]))
+sys.path.append(str(Path(__file__).resolve().parents[2]))
 
 def test_conversational_scenarios():
     """Test with realistic conversational scenarios."""

@@ -1,0 +1,101 @@
+{
+  "episode_id": "episode_67_523",
+  "query": "How does modern analysis approach the study of international trade?",
+  "final_answer": null,
+  "metrics": {
+    "total_reward": 0.30000000000000004,
+    "avg_reward": 0.10000000000000002,
+    "episode_length": 3,
+    "num_documents_selected": 3,
+    "final_step": 3
+  },
+  "states": [
+    {
+      "step": 1,
+      "selected_doc_ids": [
+        "79745"
+      ],
+      "num_remaining": 19,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 67,
+        "rewritten_query_length": 67
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "79745",
+        "142076"
+      ],
+      "num_remaining": 18,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 67,
+        "rewritten_query_length": 67
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "79745",
+        "142076",
+        "112383"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 67,
+        "rewritten_query_length": 67
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "79745",
+        "142076",
+        "112383"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 67,
+        "rewritten_query_length": 67
+      }
+    }
+  ],
+  "actions": [
+    {
+      "doc_id": "79745",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "142076",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "112383",
+      "action_type": "select"
+    }
+  ],
+  "rewards": [
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    }
+  ]
+}

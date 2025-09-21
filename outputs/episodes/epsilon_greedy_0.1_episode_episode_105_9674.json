@@ -1,0 +1,101 @@
+{
+  "episode_id": "episode_105_9674",
+  "query": "What was the Eastern Mediterranean Squadron and what were its bases of operation during its active years?",
+  "final_answer": null,
+  "metrics": {
+    "total_reward": 0.30000000000000004,
+    "avg_reward": 0.10000000000000002,
+    "episode_length": 3,
+    "num_documents_selected": 3,
+    "final_step": 3
+  },
+  "states": [
+    {
+      "step": 1,
+      "selected_doc_ids": [
+        "156964"
+      ],
+      "num_remaining": 19,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 105,
+        "rewritten_query_length": 105
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "156964",
+        "144013"
+      ],
+      "num_remaining": 18,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 105,
+        "rewritten_query_length": 105
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "156964",
+        "144013",
+        "159483"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 105,
+        "rewritten_query_length": 105
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "156964",
+        "144013",
+        "159483"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 105,
+        "rewritten_query_length": 105
+      }
+    }
+  ],
+  "actions": [
+    {
+      "doc_id": "156964",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "144013",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "159483",
+      "action_type": "select"
+    }
+  ],
+  "rewards": [
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    }
+  ]
+}

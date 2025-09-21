@@ -1,0 +1,73 @@
+{
+  "episode_id": "episode_55_573",
+  "query": "Who won the 2016 World Series in Major League Baseball?",
+  "states": [
+    {
+      "step": 1,
+      "selected_doc_ids": [
+        "99322"
+      ],
+      "remaining_candidates_count": 19
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "99322",
+        "126868"
+      ],
+      "remaining_candidates_count": 18
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "99322",
+        "126868",
+        "153716"
+      ],
+      "remaining_candidates_count": 17
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "99322",
+        "126868",
+        "153716"
+      ],
+      "remaining_candidates_count": 17
+    }
+  ],
+  "actions": [
+    {
+      "doc_id": "99322",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "126868",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "153716",
+      "action_type": "select"
+    }
+  ],
+  "rewards": [
+    {
+      "total_reward": 0.1,
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0
+    },
+    {
+      "total_reward": 0.1,
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0
+    },
+    {
+      "total_reward": 0.1,
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0
+    }
+  ]
+}

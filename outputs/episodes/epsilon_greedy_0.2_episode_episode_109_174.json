@@ -1,0 +1,101 @@
+{
+  "episode_id": "episode_109_174",
+  "query": "And what about the 2021 bypolls for the positions of mayor and deputy mayor, and which parties were involved?",
+  "final_answer": null,
+  "metrics": {
+    "total_reward": 0.30000000000000004,
+    "avg_reward": 0.10000000000000002,
+    "episode_length": 3,
+    "num_documents_selected": 3,
+    "final_step": 3
+  },
+  "states": [
+    {
+      "step": 1,
+      "selected_doc_ids": [
+        "50848"
+      ],
+      "num_remaining": 19,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 109,
+        "rewritten_query_length": 109
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "50848",
+        "20090"
+      ],
+      "num_remaining": 18,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 109,
+        "rewritten_query_length": 109
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "50848",
+        "20090",
+        "73680"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 109,
+        "rewritten_query_length": 109
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "50848",
+        "20090",
+        "73680"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 109,
+        "rewritten_query_length": 109
+      }
+    }
+  ],
+  "actions": [
+    {
+      "doc_id": "50848",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "20090",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "73680",
+      "action_type": "select"
+    }
+  ],
+  "rewards": [
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    }
+  ]
+}

@@ -10,7 +10,7 @@ from pathlib import Path
 import json
 
 # Add src to path
-sys.path.append(str(Path(__file__).resolve().parents[1]))
+sys.path.append(str(Path(__file__).resolve().parents[2]))
 
 def test_week3_with_week2():
     """Test Week 3 components integrated with Week 2 infrastructure."""

@@ -1,0 +1,101 @@
+{
+  "episode_id": "episode_79_77",
+  "query": "And how did people react to Lester Holt's role as moderator during that debate?",
+  "final_answer": null,
+  "metrics": {
+    "total_reward": 0.30000000000000004,
+    "avg_reward": 0.10000000000000002,
+    "episode_length": 3,
+    "num_documents_selected": 3,
+    "final_step": 3
+  },
+  "states": [
+    {
+      "step": 1,
+      "selected_doc_ids": [
+        "163601"
+      ],
+      "num_remaining": 19,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 79,
+        "rewritten_query_length": 79
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "163601",
+        "153117"
+      ],
+      "num_remaining": 18,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 79,
+        "rewritten_query_length": 79
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "163601",
+        "153117",
+        "73915"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 79,
+        "rewritten_query_length": 79
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "163601",
+        "153117",
+        "73915"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 79,
+        "rewritten_query_length": 79
+      }
+    }
+  ],
+  "actions": [
+    {
+      "doc_id": "163601",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "153117",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "73915",
+      "action_type": "select"
+    }
+  ],
+  "rewards": [
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    }
+  ]
+}

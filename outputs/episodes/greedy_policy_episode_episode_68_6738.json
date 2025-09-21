@@ -1,0 +1,101 @@
+{
+  "episode_id": "episode_68_6738",
+  "query": "Can you also explain the historical significance of the land itself?",
+  "final_answer": null,
+  "metrics": {
+    "total_reward": 0.30000000000000004,
+    "avg_reward": 0.10000000000000002,
+    "episode_length": 3,
+    "num_documents_selected": 3,
+    "final_step": 3
+  },
+  "states": [
+    {
+      "step": 1,
+      "selected_doc_ids": [
+        "69233"
+      ],
+      "num_remaining": 19,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 68,
+        "rewritten_query_length": 68
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "69233",
+        "58062"
+      ],
+      "num_remaining": 18,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 68,
+        "rewritten_query_length": 68
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "69233",
+        "58062",
+        "89987"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 68,
+        "rewritten_query_length": 68
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "69233",
+        "58062",
+        "89987"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 68,
+        "rewritten_query_length": 68
+      }
+    }
+  ],
+  "actions": [
+    {
+      "doc_id": "69233",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "58062",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "89987",
+      "action_type": "select"
+    }
+  ],
+  "rewards": [
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    }
+  ]
+}

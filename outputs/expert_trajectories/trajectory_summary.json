@@ -1,0 +1,11 @@
+{
+  "total_trajectories": 300,
+  "avg_reward": 0.3,
+  "avg_documents": 3.0,
+  "avg_episode_length": 3.0,
+  "policy_distribution": {
+    "greedy_policy": 93,
+    "epsilon_greedy_0.1": 90,
+    "epsilon_greedy_0.2": 117
+  }
+}

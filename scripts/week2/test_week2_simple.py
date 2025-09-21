@@ -13,8 +13,8 @@ from pathlib import Path
 from typing import List, Dict, Any
 import argparse
 
-# Add src to path
-sys.path.append(str(Path(__file__).parent.parent / "src"))
+# Add project root to path (so we can import src modules)
+sys.path.append(str(Path(__file__).parent.parent.parent))
 
 logger = logging.getLogger(__name__)
 
@@ -24,7 +24,7 @@ def test_query_rewriter():
     logger.info("Testing Query Rewriter...")
     
     try:
-        from retriever.query_rewriter import QueryRewriter, ConversationTurn
+        from src.retriever.query_rewriter import QueryRewriter, ConversationTurn
         
         rewriter = QueryRewriter()
         
@@ -54,7 +54,7 @@ def test_cross_encoder():
     logger.info("Testing Cross-Encoder Reranker...")
     
     try:
-        from reranker.cross_encoder import CrossEncoderReranker
+        from src.reranker.cross_encoder import CrossEncoderReranker
         
         reranker = CrossEncoderReranker()
         
@@ -90,7 +90,7 @@ def test_mmr():
     logger.info("Testing MMR Deduplicator...")
     
     try:
-        from reranker.mmr import MMRDeduplicator
+        from src.reranker.mmr import MMRDeduplicator
         
         mmr = MMRDeduplicator()
         
@@ -131,7 +131,7 @@ def test_rl_environment_basic():
     logger.info("Testing RL Environment (Basic)...")
     
     try:
-        from env.rag_environment import RAGEnvironment, RLAction
+        from src.env.rag_environment import RAGEnvironment, RLAction
         
         # Create environment with minimal components
         env = RAGEnvironment(
@@ -178,8 +178,8 @@ def test_episode_runner_basic():
     logger.info("Testing Episode Runner (Basic)...")
     
     try:
-        from env.rag_environment import RAGEnvironment
-        from policy.episode_runner import EpisodeRunner, PolicyConfig
+        from src.env.rag_environment import RAGEnvironment
+        from src.policy.episode_runner import EpisodeRunner, PolicyConfig
         
         env = RAGEnvironment(
             max_steps=3, 

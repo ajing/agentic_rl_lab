@@ -1,0 +1,101 @@
+{
+  "episode_id": "episode_97_9285",
+  "query": "Could you describe some of the short films he created during his education and filmmaking career?",
+  "final_answer": null,
+  "metrics": {
+    "total_reward": 0.30000000000000004,
+    "avg_reward": 0.10000000000000002,
+    "episode_length": 3,
+    "num_documents_selected": 3,
+    "final_step": 3
+  },
+  "states": [
+    {
+      "step": 1,
+      "selected_doc_ids": [
+        "42057"
+      ],
+      "num_remaining": 19,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 97,
+        "rewritten_query_length": 97
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "42057",
+        "113926"
+      ],
+      "num_remaining": 18,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 97,
+        "rewritten_query_length": 97
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "42057",
+        "113926",
+        "144665"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 97,
+        "rewritten_query_length": 97
+      }
+    },
+    {
+      "step": 3,
+      "selected_doc_ids": [
+        "42057",
+        "113926",
+        "144665"
+      ],
+      "num_remaining": 17,
+      "features": {
+        "num_candidates": 20,
+        "query_length": 97,
+        "rewritten_query_length": 97
+      }
+    }
+  ],
+  "actions": [
+    {
+      "doc_id": "42057",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "113926",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "144665",
+      "action_type": "select"
+    }
+  ],
+  "rewards": [
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    }
+  ]
+}

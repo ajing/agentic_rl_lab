@@ -8,8 +8,8 @@ import logging
 import sys
 from pathlib import Path
 
-# Add src to path
-sys.path.append(str(Path(__file__).resolve().parents[1]))
+# Add project root to path (so we can import src modules)
+sys.path.append(str(Path(__file__).resolve().parents[2]))
 
 def test_core_components():
     """Test core Week 3-4 components with realistic examples."""
