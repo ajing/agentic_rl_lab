@@ -15,6 +15,7 @@ from pathlib import Path
 
 from src.env.rag_environment import RAGEnvironment, RLAction, RLEpisode, ConversationTurn
 from src.policy.llm_expert_policy import LLMExpertPolicy
+from src.policy.bc_policy import BCPolicy, BCConfig
 
 logger = logging.getLogger(__name__)
 
@@ -22,11 +23,12 @@ logger = logging.getLogger(__name__)
 @dataclass
 class PolicyConfig:
     """Configuration for a policy."""
-    policy_type: str  # "random", "greedy", "epsilon_greedy"
+    policy_type: str  # "random", "greedy", "epsilon_greedy", "llm_expert", "bc"
     selection_strategy: str = "top_score"
     epsilon: float = 0.0  # For epsilon-greedy
     temperature: float = 1.0  # For random sampling
     name: Optional[str] = None
+    bc_config: Optional[BCConfig] = None  # For BC policy
 
     def __post_init__(self):
         if self.name is None:
@@ -153,7 +155,8 @@ class EpisodeRunner:
             "random": RandomPolicy,
             "greedy": GreedyPolicy,
             "epsilon_greedy": EpsilonGreedyPolicy,
-            "llm_expert": LLMExpertPolicy
+            "llm_expert": LLMExpertPolicy,
+            "bc": BCPolicy
         }
         
         logger.info(f"Initialized episode runner with output directory: {self.output_dir}")
@@ -193,6 +196,14 @@ class EpisodeRunner:
                 from src.policy.llm_expert_policy import LLMExpertConfig
                 llm_config = LLMExpertConfig()
                 policy = LLMExpertPolicy(llm_config)
+        elif policy_config.policy_type == "bc":
+            # Handle BC policy with special configuration
+            if hasattr(policy_config, 'bc_config') and policy_config.bc_config:
+                policy = BCPolicy(policy_config.bc_config)
+            else:
+                # Create default BC policy
+                bc_config = BCConfig()
+                policy = BCPolicy(bc_config)
         else:
             raise ValueError(f"Unknown policy type: {policy_config.policy_type}")
         
@@ -217,8 +228,8 @@ class EpisodeRunner:
                 state_features = self.env.get_state_features()
                 
                 # Select action
-                if policy_config.policy_type == "llm_expert":
-                    # LLM expert policy needs the current state
+                if policy_config.policy_type in ["llm_expert", "bc"]:
+                    # LLM expert and BC policies need the current state
                     action = policy.select_action(valid_actions, self.env.current_state, state_features)
                 else:
                     # Other policies use the standard interface

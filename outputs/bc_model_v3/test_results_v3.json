@@ -1,0 +1,1043 @@
+{
+  "total_queries": 20,
+  "predictions": [
+    {
+      "query": "Who is Kostandin Kariqi and what is his role in football?",
+      "conversation_id": "unknown",
+      "turn_id": 1,
+      "candidates": [
+        {
+          "doc_id": "9012",
+          "content": "Expert insights on Who is Kostandin Kariqi a...",
+          "rrf_score": 0.8,
+          "bm25_score": 0.6,
+          "vector_score": 0.9
+        },
+        {
+          "doc_id": "3456",
+          "content": "Basic information about Who is Kostandin K...",
+          "rrf_score": 0.5,
+          "bm25_score": 0.5,
+          "vector_score": 0.6
+        },
+        {
+          "doc_id": "7890",
+          "content": "Additional context for Who is Kostandin Kariq...",
+          "rrf_score": 0.6,
+          "bm25_score": 0.7,
+          "vector_score": 0.65
+        },
+        {
+          "doc_id": "5678",
+          "content": "Detailed analysis of Who is Kostandi...",
+          "rrf_score": 0.7,
+          "bm25_score": 0.9,
+          "vector_score": 0.75
+        },
+        {
+          "doc_id": "1234",
+          "content": "Comprehensive guide about Who is Kostandin Kar...",
+          "rrf_score": 0.9,
+          "bm25_score": 0.8,
+          "vector_score": 0.85
+        }
+      ],
+      "predicted_idx": 1,
+      "selected_doc": {
+        "doc_id": "3456",
+        "content": "Basic information about Who is Kostandin K...",
+        "rrf_score": 0.5,
+        "bm25_score": 0.5,
+        "vector_score": 0.6
+      },
+      "prediction_time": 0.0004489421844482422
+    },
+    {
+      "query": "Who is David Faupala and which football club does he currently play for?",
+      "conversation_id": "unknown",
+      "turn_id": 1,
+      "candidates": [
+        {
+          "doc_id": "3456",
+          "content": "Basic information about Who is David Faupa...",
+          "rrf_score": 0.5,
+          "bm25_score": 0.5,
+          "vector_score": 0.6
+        },
+        {
+          "doc_id": "5678",
+          "content": "Detailed analysis of Who is David Fa...",
+          "rrf_score": 0.7,
+          "bm25_score": 0.9,
+          "vector_score": 0.75
+        },
+        {
+          "doc_id": "1234",
+          "content": "Comprehensive guide about Who is David Faupala...",
+          "rrf_score": 0.9,
+          "bm25_score": 0.8,
+          "vector_score": 0.85
+        },
+        {
+          "doc_id": "9012",
+          "content": "Expert insights on Who is David Faupala and ...",
+          "rrf_score": 0.8,
+          "bm25_score": 0.6,
+          "vector_score": 0.9
+        },
+        {
+          "doc_id": "7890",
+          "content": "Additional context for Who is David Faupala a...",
+          "rrf_score": 0.6,
+          "bm25_score": 0.7,
+          "vector_score": 0.65
+        }
+      ],
+      "predicted_idx": 1,
+      "selected_doc": {
+        "doc_id": "5678",
+        "content": "Detailed analysis of Who is David Fa...",
+        "rrf_score": 0.7,
+        "bm25_score": 0.9,
+        "vector_score": 0.75
+      },
+      "prediction_time": 5.984306335449219e-05
+    },
+    {
+      "query": "How does the geodynamics of terrestrial exoplanets influence their potential habitability?",
+      "conversation_id": "unknown",
+      "turn_id": 1,
+      "candidates": [
+        {
+          "doc_id": "5678",
+          "content": "Detailed analysis of How does the ge...",
+          "rrf_score": 0.7,
+          "bm25_score": 0.9,
+          "vector_score": 0.75
+        },
+        {
+          "doc_id": "9012",
+          "content": "Expert insights on How does the geodynamics ...",
+          "rrf_score": 0.8,
+          "bm25_score": 0.6,
+          "vector_score": 0.9
+        },
+        {
+          "doc_id": "1234",
+          "content": "Comprehensive guide about How does the geodyna...",
+          "rrf_score": 0.9,
+          "bm25_score": 0.8,
+          "vector_score": 0.85
+        },
+        {
+          "doc_id": "7890",
+          "content": "Additional context for How does the geodynami...",
+          "rrf_score": 0.6,
+          "bm25_score": 0.7,
+          "vector_score": 0.65
+        },
+        {
+          "doc_id": "3456",
+          "content": "Basic information about How does the geody...",
+          "rrf_score": 0.5,
+          "bm25_score": 0.5,
+          "vector_score": 0.6
+        }
+      ],
+      "predicted_idx": 1,
+      "selected_doc": {
+        "doc_id": "9012",
+        "content": "Expert insights on How does the geodynamics ...",
+        "rrf_score": 0.8,
+        "bm25_score": 0.6,
+        "vector_score": 0.9
+      },
+      "prediction_time": 5.1975250244140625e-05
+    },
+    {
+      "query": "When and where was the League of Legends: Season 2 World Championship held, and which team won the tournament?",
+      "conversation_id": "unknown",
+      "turn_id": 1,
+      "candidates": [
+        {
+          "doc_id": "1234",
+          "content": "Comprehensive guide about When and where was t...",
+          "rrf_score": 0.9,
+          "bm25_score": 0.8,
+          "vector_score": 0.85
+        },
+        {
+          "doc_id": "3456",
+          "content": "Basic information about When and where was...",
+          "rrf_score": 0.5,
+          "bm25_score": 0.5,
+          "vector_score": 0.6
+        },
+        {
+          "doc_id": "7890",
+          "content": "Additional context for When and where was the...",
+          "rrf_score": 0.6,
+          "bm25_score": 0.7,
+          "vector_score": 0.65
+        },
+        {
+          "doc_id": "5678",
+          "content": "Detailed analysis of When and where ...",
+          "rrf_score": 0.7,
+          "bm25_score": 0.9,
+          "vector_score": 0.75
+        },
+        {
+          "doc_id": "9012",
+          "content": "Expert insights on When and where was the Le...",
+          "rrf_score": 0.8,
+          "bm25_score": 0.6,
+          "vector_score": 0.9
+        }
+      ],
+      "predicted_idx": 1,
+      "selected_doc": {
+        "doc_id": "3456",
+        "content": "Basic information about When and where was...",
+        "rrf_score": 0.5,
+        "bm25_score": 0.5,
+        "vector_score": 0.6
+      },
+      "prediction_time": 4.8160552978515625e-05
+    },
+    {
+      "query": "Who is Sofie Persson and what is her professional background in soccer?",
+      "conversation_id": "unknown",
+      "turn_id": 1,
+      "candidates": [
+        {
+          "doc_id": "5678",
+          "content": "Detailed analysis of Who is Sofie Pe...",
+          "rrf_score": 0.7,
+          "bm25_score": 0.9,
+          "vector_score": 0.75
+        },
+        {
+          "doc_id": "9012",
+          "content": "Expert insights on Who is Sofie Persson and ...",
+          "rrf_score": 0.8,
+          "bm25_score": 0.6,
+          "vector_score": 0.9
+        },
+        {
+          "doc_id": "1234",
+          "content": "Comprehensive guide about Who is Sofie Persson...",
+          "rrf_score": 0.9,
+          "bm25_score": 0.8,
+          "vector_score": 0.85
+        },
+        {
+          "doc_id": "3456",
+          "content": "Basic information about Who is Sofie Perss...",
+          "rrf_score": 0.5,
+          "bm25_score": 0.5,
+          "vector_score": 0.6
+        },
+        {
+          "doc_id": "7890",
+          "content": "Additional context for Who is Sofie Persson a...",
+          "rrf_score": 0.6,
+          "bm25_score": 0.7,
+          "vector_score": 0.65
+        }
+      ],
+      "predicted_idx": 1,
+      "selected_doc": {
+        "doc_id": "9012",
+        "content": "Expert insights on Who is Sofie Persson and ...",
+        "rrf_score": 0.8,
+        "bm25_score": 0.6,
+        "vector_score": 0.9
+      },
+      "prediction_time": 4.1961669921875e-05
+    },
+    {
+      "query": "What is the Black Lunch Table, and what are its main objectives?",
+      "conversation_id": "unknown",
+      "turn_id": 1,
+      "candidates": [
+        {
+          "doc_id": "7890",
+          "content": "Additional context for What is the Black Lunc...",
+          "rrf_score": 0.6,
+          "bm25_score": 0.7,
+          "vector_score": 0.65
+        },
+        {
+          "doc_id": "9012",
+          "content": "Expert insights on What is the Black Lunch T...",
+          "rrf_score": 0.8,
+          "bm25_score": 0.6,
+          "vector_score": 0.9
+        },
+        {
+          "doc_id": "1234",
+          "content": "Comprehensive guide about What is the Black Lu...",
+          "rrf_score": 0.9,
+          "bm25_score": 0.8,
+          "vector_score": 0.85
+        },
+        {
+          "doc_id": "5678",
+          "content": "Detailed analysis of What is the Bla...",
+          "rrf_score": 0.7,
+          "bm25_score": 0.9,
+          "vector_score": 0.75
+        },
+        {
+          "doc_id": "3456",
+          "content": "Basic information about What is the Black ...",
+          "rrf_score": 0.5,
+          "bm25_score": 0.5,
+          "vector_score": 0.6
+        }
+      ],
+      "predicted_idx": 1,
+      "selected_doc": {
+        "doc_id": "9012",
+        "content": "Expert insights on What is the Black Lunch T...",
+        "rrf_score": 0.8,
+        "bm25_score": 0.6,
+        "vector_score": 0.9
+      },
+      "prediction_time": 4.315376281738281e-05
+    },
+    {
+      "query": "Who is Shawn McCoulsky and can you tell me about his football career?",
+      "conversation_id": "unknown",
+      "turn_id": 1,
+      "candidates": [
+        {
+          "doc_id": "5678",
+          "content": "Detailed analysis of Who is Shawn Mc...",
+          "rrf_score": 0.7,
+          "bm25_score": 0.9,
+          "vector_score": 0.75
+        },
+        {
+          "doc_id": "7890",
+          "content": "Additional context for Who is Shawn McCoulsky...",
+          "rrf_score": 0.6,
+          "bm25_score": 0.7,
+          "vector_score": 0.65
+        },
+        {
+          "doc_id": "1234",
+          "content": "Comprehensive guide about Who is Shawn McCouls...",
+          "rrf_score": 0.9,
+          "bm25_score": 0.8,
+          "vector_score": 0.85
+        },
+        {
+          "doc_id": "9012",
+          "content": "Expert insights on Who is Shawn McCoulsky an...",
+          "rrf_score": 0.8,
+          "bm25_score": 0.6,
+          "vector_score": 0.9
+        },
+        {
+          "doc_id": "3456",
+          "content": "Basic information about Who is Shawn McCou...",
+          "rrf_score": 0.5,
+          "bm25_score": 0.5,
+          "vector_score": 0.6
+        }
+      ],
+      "predicted_idx": 1,
+      "selected_doc": {
+        "doc_id": "7890",
+        "content": "Additional context for Who is Shawn McCoulsky...",
+        "rrf_score": 0.6,
+        "bm25_score": 0.7,
+        "vector_score": 0.65
+      },
+      "prediction_time": 4.100799560546875e-05
+    },
+    {
+      "query": "What is the deterministic rendezvous problem and how is symmetry broken among the robots involved?",
+      "conversation_id": "unknown",
+      "turn_id": 1,
+      "candidates": [
+        {
+          "doc_id": "9012",
+          "content": "Expert insights on What is the deterministic...",
+          "rrf_score": 0.8,
+          "bm25_score": 0.6,
+          "vector_score": 0.9
+        },
+        {
+          "doc_id": "1234",
+          "content": "Comprehensive guide about What is the determin...",
+          "rrf_score": 0.9,
+          "bm25_score": 0.8,
+          "vector_score": 0.85
+        },
+        {
+          "doc_id": "7890",
+          "content": "Additional context for What is the determinis...",
+          "rrf_score": 0.6,
+          "bm25_score": 0.7,
+          "vector_score": 0.65
+        },
+        {
+          "doc_id": "3456",
+          "content": "Basic information about What is the determ...",
+          "rrf_score": 0.5,
+          "bm25_score": 0.5,
+          "vector_score": 0.6
+        },
+        {
+          "doc_id": "5678",
+          "content": "Detailed analysis of What is the det...",
+          "rrf_score": 0.7,
+          "bm25_score": 0.9,
+          "vector_score": 0.75
+        }
+      ],
+      "predicted_idx": 1,
+      "selected_doc": {
+        "doc_id": "1234",
+        "content": "Comprehensive guide about What is the determin...",
+        "rrf_score": 0.9,
+        "bm25_score": 0.8,
+        "vector_score": 0.85
+      },
+      "prediction_time": 4.696846008300781e-05
+    },
+    {
+      "query": "Who was Eric Edward Khasakhala and what were his contributions to Kenyan politics and education?",
+      "conversation_id": "unknown",
+      "turn_id": 1,
+      "candidates": [
+        {
+          "doc_id": "9012",
+          "content": "Expert insights on Who was Eric Edward Khasa...",
+          "rrf_score": 0.8,
+          "bm25_score": 0.6,
+          "vector_score": 0.9
+        },
+        {
+          "doc_id": "7890",
+          "content": "Additional context for Who was Eric Edward Kh...",
+          "rrf_score": 0.6,
+          "bm25_score": 0.7,
+          "vector_score": 0.65
+        },
+        {
+          "doc_id": "3456",
+          "content": "Basic information about Who was Eric Edwar...",
+          "rrf_score": 0.5,
+          "bm25_score": 0.5,
+          "vector_score": 0.6
+        },
+        {
+          "doc_id": "5678",
+          "content": "Detailed analysis of Who was Eric Ed...",
+          "rrf_score": 0.7,
+          "bm25_score": 0.9,
+          "vector_score": 0.75
+        },
+        {
+          "doc_id": "1234",
+          "content": "Comprehensive guide about Who was Eric Edward ...",
+          "rrf_score": 0.9,
+          "bm25_score": 0.8,
+          "vector_score": 0.85
+        }
+      ],
+      "predicted_idx": 1,
+      "selected_doc": {
+        "doc_id": "7890",
+        "content": "Additional context for Who was Eric Edward Kh...",
+        "rrf_score": 0.6,
+        "bm25_score": 0.7,
+        "vector_score": 0.65
+      },
+      "prediction_time": 4.315376281738281e-05
+    },
+    {
+      "query": "Who is Dennis Adeniran and which football team does he currently play for?",
+      "conversation_id": "unknown",
+      "turn_id": 1,
+      "candidates": [
+        {
+          "doc_id": "7890",
+          "content": "Additional context for Who is Dennis Adeniran...",
+          "rrf_score": 0.6,
+          "bm25_score": 0.7,
+          "vector_score": 0.65
+        },
+        {
+          "doc_id": "3456",
+          "content": "Basic information about Who is Dennis Aden...",
+          "rrf_score": 0.5,
+          "bm25_score": 0.5,
+          "vector_score": 0.6
+        },
+        {
+          "doc_id": "1234",
+          "content": "Comprehensive guide about Who is Dennis Adenir...",
+          "rrf_score": 0.9,
+          "bm25_score": 0.8,
+          "vector_score": 0.85
+        },
+        {
+          "doc_id": "5678",
+          "content": "Detailed analysis of Who is Dennis A...",
+          "rrf_score": 0.7,
+          "bm25_score": 0.9,
+          "vector_score": 0.75
+        },
+        {
+          "doc_id": "9012",
+          "content": "Expert insights on Who is Dennis Adeniran an...",
+          "rrf_score": 0.8,
+          "bm25_score": 0.6,
+          "vector_score": 0.9
+        }
+      ],
+      "predicted_idx": 1,
+      "selected_doc": {
+        "doc_id": "3456",
+        "content": "Basic information about Who is Dennis Aden...",
+        "rrf_score": 0.5,
+        "bm25_score": 0.5,
+        "vector_score": 0.6
+      },
+      "prediction_time": 4.100799560546875e-05
+    },
+    {
+      "query": "Who is Yehudah Katz and what are his contributions to music and activism?",
+      "conversation_id": "unknown",
+      "turn_id": 1,
+      "candidates": [
+        {
+          "doc_id": "1234",
+          "content": "Comprehensive guide about Who is Yehudah Katz ...",
+          "rrf_score": 0.9,
+          "bm25_score": 0.8,
+          "vector_score": 0.85
+        },
+        {
+          "doc_id": "7890",
+          "content": "Additional context for Who is Yehudah Katz an...",
+          "rrf_score": 0.6,
+          "bm25_score": 0.7,
+          "vector_score": 0.65
+        },
+        {
+          "doc_id": "5678",
+          "content": "Detailed analysis of Who is Yehudah ...",
+          "rrf_score": 0.7,
+          "bm25_score": 0.9,
+          "vector_score": 0.75
+        },
+        {
+          "doc_id": "9012",
+          "content": "Expert insights on Who is Yehudah Katz and w...",
+          "rrf_score": 0.8,
+          "bm25_score": 0.6,
+          "vector_score": 0.9
+        },
+        {
+          "doc_id": "3456",
+          "content": "Basic information about Who is Yehudah Kat...",
+          "rrf_score": 0.5,
+          "bm25_score": 0.5,
+          "vector_score": 0.6
+        }
+      ],
+      "predicted_idx": 1,
+      "selected_doc": {
+        "doc_id": "7890",
+        "content": "Additional context for Who is Yehudah Katz an...",
+        "rrf_score": 0.6,
+        "bm25_score": 0.7,
+        "vector_score": 0.65
+      },
+      "prediction_time": 4.1961669921875e-05
+    },
+    {
+      "query": "Who is Ashley Smith-Brown and what position does he play in football?",
+      "conversation_id": "unknown",
+      "turn_id": 1,
+      "candidates": [
+        {
+          "doc_id": "1234",
+          "content": "Comprehensive guide about Who is Ashley Smith-...",
+          "rrf_score": 0.9,
+          "bm25_score": 0.8,
+          "vector_score": 0.85
+        },
+        {
+          "doc_id": "3456",
+          "content": "Basic information about Who is Ashley Smit...",
+          "rrf_score": 0.5,
+          "bm25_score": 0.5,
+          "vector_score": 0.6
+        },
+        {
+          "doc_id": "5678",
+          "content": "Detailed analysis of Who is Ashley S...",
+          "rrf_score": 0.7,
+          "bm25_score": 0.9,
+          "vector_score": 0.75
+        },
+        {
+          "doc_id": "7890",
+          "content": "Additional context for Who is Ashley Smith-Br...",
+          "rrf_score": 0.6,
+          "bm25_score": 0.7,
+          "vector_score": 0.65
+        },
+        {
+          "doc_id": "9012",
+          "content": "Expert insights on Who is Ashley Smith-Brown...",
+          "rrf_score": 0.8,
+          "bm25_score": 0.6,
+          "vector_score": 0.9
+        }
+      ],
+      "predicted_idx": 1,
+      "selected_doc": {
+        "doc_id": "3456",
+        "content": "Basic information about Who is Ashley Smit...",
+        "rrf_score": 0.5,
+        "bm25_score": 0.5,
+        "vector_score": 0.6
+      },
+      "prediction_time": 4.100799560546875e-05
+    },
+    {
+      "query": "What are Guatemala\u2013Spain relations?",
+      "conversation_id": "unknown",
+      "turn_id": 1,
+      "candidates": [
+        {
+          "doc_id": "7890",
+          "content": "Additional context for What are Guatemala\u2013Spa...",
+          "rrf_score": 0.6,
+          "bm25_score": 0.7,
+          "vector_score": 0.65
+        },
+        {
+          "doc_id": "1234",
+          "content": "Comprehensive guide about What are Guatemala\u2013S...",
+          "rrf_score": 0.9,
+          "bm25_score": 0.8,
+          "vector_score": 0.85
+        },
+        {
+          "doc_id": "5678",
+          "content": "Detailed analysis of What are Guatem...",
+          "rrf_score": 0.7,
+          "bm25_score": 0.9,
+          "vector_score": 0.75
+        },
+        {
+          "doc_id": "3456",
+          "content": "Basic information about What are Guatemala...",
+          "rrf_score": 0.5,
+          "bm25_score": 0.5,
+          "vector_score": 0.6
+        },
+        {
+          "doc_id": "9012",
+          "content": "Expert insights on What are Guatemala\u2013Spain ...",
+          "rrf_score": 0.8,
+          "bm25_score": 0.6,
+          "vector_score": 0.9
+        }
+      ],
+      "predicted_idx": 1,
+      "selected_doc": {
+        "doc_id": "1234",
+        "content": "Comprehensive guide about What are Guatemala\u2013S...",
+        "rrf_score": 0.9,
+        "bm25_score": 0.8,
+        "vector_score": 0.85
+      },
+      "prediction_time": 4.100799560546875e-05
+    },
+    {
+      "query": "Who is Doug Wolfgang and what are some of his career achievements in racing?",
+      "conversation_id": "unknown",
+      "turn_id": 1,
+      "candidates": [
+        {
+          "doc_id": "3456",
+          "content": "Basic information about Who is Doug Wolfga...",
+          "rrf_score": 0.5,
+          "bm25_score": 0.5,
+          "vector_score": 0.6
+        },
+        {
+          "doc_id": "7890",
+          "content": "Additional context for Who is Doug Wolfgang a...",
+          "rrf_score": 0.6,
+          "bm25_score": 0.7,
+          "vector_score": 0.65
+        },
+        {
+          "doc_id": "1234",
+          "content": "Comprehensive guide about Who is Doug Wolfgang...",
+          "rrf_score": 0.9,
+          "bm25_score": 0.8,
+          "vector_score": 0.85
+        },
+        {
+          "doc_id": "9012",
+          "content": "Expert insights on Who is Doug Wolfgang and ...",
+          "rrf_score": 0.8,
+          "bm25_score": 0.6,
+          "vector_score": 0.9
+        },
+        {
+          "doc_id": "5678",
+          "content": "Detailed analysis of Who is Doug Wol...",
+          "rrf_score": 0.7,
+          "bm25_score": 0.9,
+          "vector_score": 0.75
+        }
+      ],
+      "predicted_idx": 1,
+      "selected_doc": {
+        "doc_id": "7890",
+        "content": "Additional context for Who is Doug Wolfgang a...",
+        "rrf_score": 0.6,
+        "bm25_score": 0.7,
+        "vector_score": 0.65
+      },
+      "prediction_time": 4.220008850097656e-05
+    },
+    {
+      "query": "Can you explain what the multiplicative weight update method is and how it's used in decision making and prediction?",
+      "conversation_id": "unknown",
+      "turn_id": 1,
+      "candidates": [
+        {
+          "doc_id": "9012",
+          "content": "Expert insights on Can you explain what the ...",
+          "rrf_score": 0.8,
+          "bm25_score": 0.6,
+          "vector_score": 0.9
+        },
+        {
+          "doc_id": "5678",
+          "content": "Detailed analysis of Can you explain...",
+          "rrf_score": 0.7,
+          "bm25_score": 0.9,
+          "vector_score": 0.75
+        },
+        {
+          "doc_id": "1234",
+          "content": "Comprehensive guide about Can you explain what...",
+          "rrf_score": 0.9,
+          "bm25_score": 0.8,
+          "vector_score": 0.85
+        },
+        {
+          "doc_id": "3456",
+          "content": "Basic information about Can you explain wh...",
+          "rrf_score": 0.5,
+          "bm25_score": 0.5,
+          "vector_score": 0.6
+        },
+        {
+          "doc_id": "7890",
+          "content": "Additional context for Can you explain what t...",
+          "rrf_score": 0.6,
+          "bm25_score": 0.7,
+          "vector_score": 0.65
+        }
+      ],
+      "predicted_idx": 1,
+      "selected_doc": {
+        "doc_id": "5678",
+        "content": "Detailed analysis of Can you explain...",
+        "rrf_score": 0.7,
+        "bm25_score": 0.9,
+        "vector_score": 0.75
+      },
+      "prediction_time": 4.00543212890625e-05
+    },
+    {
+      "query": "When was the men's 100 metre backstroke competition held at the 2016 European Aquatics Championships?",
+      "conversation_id": "unknown",
+      "turn_id": 1,
+      "candidates": [
+        {
+          "doc_id": "5678",
+          "content": "Detailed analysis of When was the me...",
+          "rrf_score": 0.7,
+          "bm25_score": 0.9,
+          "vector_score": 0.75
+        },
+        {
+          "doc_id": "7890",
+          "content": "Additional context for When was the men's 100...",
+          "rrf_score": 0.6,
+          "bm25_score": 0.7,
+          "vector_score": 0.65
+        },
+        {
+          "doc_id": "1234",
+          "content": "Comprehensive guide about When was the men's 1...",
+          "rrf_score": 0.9,
+          "bm25_score": 0.8,
+          "vector_score": 0.85
+        },
+        {
+          "doc_id": "3456",
+          "content": "Basic information about When was the men's...",
+          "rrf_score": 0.5,
+          "bm25_score": 0.5,
+          "vector_score": 0.6
+        },
+        {
+          "doc_id": "9012",
+          "content": "Expert insights on When was the men's 100 me...",
+          "rrf_score": 0.8,
+          "bm25_score": 0.6,
+          "vector_score": 0.9
+        }
+      ],
+      "predicted_idx": 1,
+      "selected_doc": {
+        "doc_id": "7890",
+        "content": "Additional context for When was the men's 100...",
+        "rrf_score": 0.6,
+        "bm25_score": 0.7,
+        "vector_score": 0.65
+      },
+      "prediction_time": 4.029273986816406e-05
+    },
+    {
+      "query": "What was the Marstrand Free Port, and what role did it play during the Gustavian era in Sweden?",
+      "conversation_id": "unknown",
+      "turn_id": 1,
+      "candidates": [
+        {
+          "doc_id": "5678",
+          "content": "Detailed analysis of What was the Ma...",
+          "rrf_score": 0.7,
+          "bm25_score": 0.9,
+          "vector_score": 0.75
+        },
+        {
+          "doc_id": "1234",
+          "content": "Comprehensive guide about What was the Marstra...",
+          "rrf_score": 0.9,
+          "bm25_score": 0.8,
+          "vector_score": 0.85
+        },
+        {
+          "doc_id": "3456",
+          "content": "Basic information about What was the Marst...",
+          "rrf_score": 0.5,
+          "bm25_score": 0.5,
+          "vector_score": 0.6
+        },
+        {
+          "doc_id": "9012",
+          "content": "Expert insights on What was the Marstrand Fr...",
+          "rrf_score": 0.8,
+          "bm25_score": 0.6,
+          "vector_score": 0.9
+        },
+        {
+          "doc_id": "7890",
+          "content": "Additional context for What was the Marstrand...",
+          "rrf_score": 0.6,
+          "bm25_score": 0.7,
+          "vector_score": 0.65
+        }
+      ],
+      "predicted_idx": 1,
+      "selected_doc": {
+        "doc_id": "1234",
+        "content": "Comprehensive guide about What was the Marstra...",
+        "rrf_score": 0.9,
+        "bm25_score": 0.8,
+        "vector_score": 0.85
+      },
+      "prediction_time": 4.076957702636719e-05
+    },
+    {
+      "query": "Who is Lala Kramarenko and what are her achievements in rhythmic gymnastics?",
+      "conversation_id": "unknown",
+      "turn_id": 1,
+      "candidates": [
+        {
+          "doc_id": "1234",
+          "content": "Comprehensive guide about Who is Lala Kramaren...",
+          "rrf_score": 0.9,
+          "bm25_score": 0.8,
+          "vector_score": 0.85
+        },
+        {
+          "doc_id": "9012",
+          "content": "Expert insights on Who is Lala Kramarenko an...",
+          "rrf_score": 0.8,
+          "bm25_score": 0.6,
+          "vector_score": 0.9
+        },
+        {
+          "doc_id": "5678",
+          "content": "Detailed analysis of Who is Lala Kra...",
+          "rrf_score": 0.7,
+          "bm25_score": 0.9,
+          "vector_score": 0.75
+        },
+        {
+          "doc_id": "3456",
+          "content": "Basic information about Who is Lala Kramar...",
+          "rrf_score": 0.5,
+          "bm25_score": 0.5,
+          "vector_score": 0.6
+        },
+        {
+          "doc_id": "7890",
+          "content": "Additional context for Who is Lala Kramarenko...",
+          "rrf_score": 0.6,
+          "bm25_score": 0.7,
+          "vector_score": 0.65
+        }
+      ],
+      "predicted_idx": 1,
+      "selected_doc": {
+        "doc_id": "9012",
+        "content": "Expert insights on Who is Lala Kramarenko an...",
+        "rrf_score": 0.8,
+        "bm25_score": 0.6,
+        "vector_score": 0.9
+      },
+      "prediction_time": 4.00543212890625e-05
+    },
+    {
+      "query": "Who is Jan Carlos Hurtado and which clubs has he played for?",
+      "conversation_id": "unknown",
+      "turn_id": 1,
+      "candidates": [
+        {
+          "doc_id": "3456",
+          "content": "Basic information about Who is Jan Carlos ...",
+          "rrf_score": 0.5,
+          "bm25_score": 0.5,
+          "vector_score": 0.6
+        },
+        {
+          "doc_id": "7890",
+          "content": "Additional context for Who is Jan Carlos Hurt...",
+          "rrf_score": 0.6,
+          "bm25_score": 0.7,
+          "vector_score": 0.65
+        },
+        {
+          "doc_id": "5678",
+          "content": "Detailed analysis of Who is Jan Carl...",
+          "rrf_score": 0.7,
+          "bm25_score": 0.9,
+          "vector_score": 0.75
+        },
+        {
+          "doc_id": "9012",
+          "content": "Expert insights on Who is Jan Carlos Hurtado...",
+          "rrf_score": 0.8,
+          "bm25_score": 0.6,
+          "vector_score": 0.9
+        },
+        {
+          "doc_id": "1234",
+          "content": "Comprehensive guide about Who is Jan Carlos Hu...",
+          "rrf_score": 0.9,
+          "bm25_score": 0.8,
+          "vector_score": 0.85
+        }
+      ],
+      "predicted_idx": 1,
+      "selected_doc": {
+        "doc_id": "7890",
+        "content": "Additional context for Who is Jan Carlos Hurt...",
+        "rrf_score": 0.6,
+        "bm25_score": 0.7,
+        "vector_score": 0.65
+      },
+      "prediction_time": 4.029273986816406e-05
+    },
+    {
+      "query": "When and where was the Royal Artillery Museum first opened to the public?",
+      "conversation_id": "unknown",
+      "turn_id": 1,
+      "candidates": [
+        {
+          "doc_id": "9012",
+          "content": "Expert insights on When and where was the Ro...",
+          "rrf_score": 0.8,
+          "bm25_score": 0.6,
+          "vector_score": 0.9
+        },
+        {
+          "doc_id": "5678",
+          "content": "Detailed analysis of When and where ...",
+          "rrf_score": 0.7,
+          "bm25_score": 0.9,
+          "vector_score": 0.75
+        },
+        {
+          "doc_id": "1234",
+          "content": "Comprehensive guide about When and where was t...",
+          "rrf_score": 0.9,
+          "bm25_score": 0.8,
+          "vector_score": 0.85
+        },
+        {
+          "doc_id": "3456",
+          "content": "Basic information about When and where was...",
+          "rrf_score": 0.5,
+          "bm25_score": 0.5,
+          "vector_score": 0.6
+        },
+        {
+          "doc_id": "7890",
+          "content": "Additional context for When and where was the...",
+          "rrf_score": 0.6,
+          "bm25_score": 0.7,
+          "vector_score": 0.65
+        }
+      ],
+      "predicted_idx": 1,
+      "selected_doc": {
+        "doc_id": "5678",
+        "content": "Detailed analysis of When and where ...",
+        "rrf_score": 0.7,
+        "bm25_score": 0.9,
+        "vector_score": 0.75
+      },
+      "prediction_time": 3.933906555175781e-05
+    }
+  ],
+  "avg_prediction_time": 6.365776062011719e-05,
+  "model_config": {
+    "learning_rate": 0.001,
+    "batch_size": 16,
+    "num_epochs": 100,
+    "hidden_size": 128,
+    "dropout": 0.1,
+    "weight_decay": 1e-05,
+    "device": "cpu",
+    "max_candidates": 10
+  },
+  "selection_distribution": {
+    "3456": 4,
+    "5678": 3,
+    "9012": 4,
+    "7890": 6,
+    "1234": 3
+  }
+}
