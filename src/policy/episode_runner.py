@@ -21,10 +21,20 @@ logger = logging.getLogger(__name__)
 @dataclass
 class PolicyConfig:
     """Configuration for a policy."""
-    name: str
     policy_type: str  # "random", "greedy", "epsilon_greedy"
+    selection_strategy: str = "top_score"
     epsilon: float = 0.0  # For epsilon-greedy
     temperature: float = 1.0  # For random sampling
+    name: Optional[str] = None
+
+    def __post_init__(self):
+        if self.name is None:
+            parts = [self.policy_type]
+            if self.selection_strategy:
+                parts.append(self.selection_strategy)
+            if self.policy_type == "epsilon_greedy":
+                parts.append(f"eps{self.epsilon:.2f}")
+            self.name = "_".join(parts)
 
 
 class RandomPolicy:
@@ -362,9 +372,9 @@ if __name__ == "__main__":
     
     # Define policies to test
     policies = [
-        PolicyConfig("random", "random"),
-        PolicyConfig("greedy", "greedy"),
-        PolicyConfig("epsilon_greedy", "epsilon_greedy", epsilon=0.2)
+        PolicyConfig(policy_type="random", selection_strategy="random"),
+        PolicyConfig(policy_type="greedy", selection_strategy="top_score"),
+        PolicyConfig(policy_type="epsilon_greedy", selection_strategy="top_score", epsilon=0.2)
     ]
     
     # Compare policies

@@ -183,7 +183,7 @@ env = RAGEnvironment(
 
 # Run episode with random policy
 runner = EpisodeRunner(env)
-policy_config = PolicyConfig("random", "random")
+policy_config = PolicyConfig(policy_type="random", selection_strategy="random")
 episode = runner.run_episode("Who won the FA Cup in 2020?", policy_config)
 ```
 

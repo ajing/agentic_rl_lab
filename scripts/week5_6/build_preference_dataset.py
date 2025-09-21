@@ -65,17 +65,35 @@ class PreferenceDatasetBuilder:
         """Setup components for preference dataset building."""
         logger.info("Setting up components...")
         
-        # Initialize RAG environment
-        self.rag_env = RAGEnvironment(
-            corpus_path=str(self.data_dir / "docs.jsonl"),
-            bm25_index_path="index/coral_bm25",
-            vector_index_path="index/coral_faiss",
-            use_query_rewriting=True,
-            use_cross_encoder=True,
-            use_mmr=True,
-            max_steps=5,
-            k_candidates=100
-        )
+        # Try to initialize with full features first
+        try:
+            self.rag_env = RAGEnvironment(
+                corpus_path=str(self.data_dir / "docs.jsonl"),
+                bm25_index_path="index/coral_bm25",
+                vector_index_path="index/coral_faiss",
+                use_query_rewriting=True,
+                use_cross_encoder=True,
+                use_mmr=True,
+                max_steps=5,
+                k_candidates=100
+            )
+            logger.info("✅ RAG environment initialized with full features")
+        except Exception as e:
+            logger.warning(f"Failed to initialize with full features: {e}")
+            logger.info("Falling back to basic configuration...")
+            
+            # Fallback to basic configuration without API dependencies
+            self.rag_env = RAGEnvironment(
+                corpus_path=str(self.data_dir / "docs.jsonl"),
+                bm25_index_path="index/coral_bm25",
+                vector_index_path="index/coral_faiss",
+                use_query_rewriting=False,  # Disable to avoid API requirement
+                use_cross_encoder=False,    # Disable for faster testing
+                use_mmr=False,              # Disable for faster testing
+                max_steps=3,
+                k_candidates=20
+            )
+            logger.info("✅ RAG environment initialized with basic configuration")
         
         # Initialize episode runner
         self.episode_runner = EpisodeRunner(self.rag_env)
@@ -208,19 +226,27 @@ class PreferenceDatasetBuilder:
             episode_b = self.episode_runner.run_episode(query, policy_b, history)
             
             # Generate responses
-            docs_a = [{'content': doc.content} for doc in episode_a.final_state.selected_documents]
-            docs_b = [{'content': doc.content} for doc in episode_b.final_state.selected_documents]
-            
-            response_a = self.generate_response_from_documents(query, docs_a)
-            response_b = self.generate_response_from_documents(query, docs_b)
+            # Use the finalized state snapshot (falls back to last recorded state)
+            final_state_a = episode_a.states[-1] if episode_a.states else None
+            final_state_b = episode_b.states[-1] if episode_b.states else None
+
+            # Collect selected documents with content (fallback to empty list)
+            docs_a = final_state_a.selected_documents if final_state_a else []
+            docs_b = final_state_b.selected_documents if final_state_b else []
+
+            context_a = [doc.content for doc in docs_a]
+            context_b = [doc.content for doc in docs_b]
+
+            response_a = self.generate_response_from_documents(query, [{'content': c} for c in context_a])
+            response_b = self.generate_response_from_documents(query, [{'content': c} for c in context_b])
             
             # Create answer pair
             answer_pair = AnswerPair(
                 query=query,
                 answer_a=response_a,
                 answer_b=response_b,
-                context_a=[doc['content'] for doc in docs_a],
-                context_b=[doc['content'] for doc in docs_b]
+                context_a=context_a,
+                context_b=context_b
             )
             
             # Get preference from LLM judge
@@ -234,8 +260,8 @@ class PreferenceDatasetBuilder:
                         'conversation_history': [{'question': t.question, 'answer': t.answer, 'turn_id': t.turn_id} for t in history],
                         'answer_a': response_a,
                         'answer_b': response_b,
-                        'context_a': [doc['content'] for doc in docs_a],
-                        'context_b': [doc['content'] for doc in docs_b],
+                        'context_a': context_a,
+                        'context_b': context_b,
                         'preferred_answer': preference_result.preferred_answer,
                         'confidence': preference_result.confidence,
                         'reasoning': preference_result.reasoning,
@@ -252,13 +278,13 @@ class PreferenceDatasetBuilder:
                         },
                         'episode_a': {
                             'total_reward': episode_a.total_reward,
-                            'num_documents': len(episode_a.selected_doc_ids),
-                            'episode_length': episode_a.final_state.current_step
+                            'num_documents': len(context_a),
+                            'episode_length': final_state_a.step if final_state_a else len(episode_a.actions)
                         },
                         'episode_b': {
                             'total_reward': episode_b.total_reward,
-                            'num_documents': len(episode_b.selected_doc_ids),
-                            'episode_length': episode_b.final_state.current_step
+                            'num_documents': len(context_b),
+                            'episode_length': final_state_b.step if final_state_b else len(episode_b.actions)
                         }
                     }
                     
@@ -276,11 +302,11 @@ class PreferenceDatasetBuilder:
                     'conversation_history': [{'question': t.question, 'answer': t.answer, 'turn_id': t.turn_id} for t in history],
                     'answer_a': response_a,
                     'answer_b': response_b,
-                    'context_a': [doc['content'] for doc in docs_a],
-                    'context_b': [doc['content'] for doc in docs_b],
+                    'context_a': context_a,
+                    'context_b': context_b,
                     'preferred_answer': preferred_answer,
                     'confidence': 0.8,  # Default confidence
-                    'reasoning': f"Preference based on episode reward: A={episode_a.total_reward:.3f}, B={episode_b.total_reward:.3f}",
+                    'reasoning': f"Preference based on episode reward: A={sum(r.total_reward for r in episode_a.rewards):.3f}, B={sum(r.total_reward for r in episode_b.rewards):.3f}",
                     'criteria_scores': {},
                     'policy_a': {
                         'name': policy_a.name,
@@ -293,14 +319,14 @@ class PreferenceDatasetBuilder:
                         'epsilon': getattr(policy_b, 'epsilon', None)
                     },
                     'episode_a': {
-                        'total_reward': episode_a.total_reward,
-                        'num_documents': len(episode_a.selected_doc_ids),
-                        'episode_length': episode_a.final_state.current_step
+                        'total_reward': sum(r.total_reward for r in episode_a.rewards),
+                        'num_documents': len(context_a),
+                        'episode_length': final_state_a.step if final_state_a else len(episode_a.actions)
                     },
                     'episode_b': {
-                        'total_reward': episode_b.total_reward,
-                        'num_documents': len(episode_b.selected_doc_ids),
-                        'episode_length': episode_b.final_state.current_step
+                        'total_reward': sum(r.total_reward for r in episode_b.rewards),
+                        'num_documents': len(context_b),
+                        'episode_length': final_state_b.step if final_state_b else len(episode_b.actions)
                     }
                 }
                 

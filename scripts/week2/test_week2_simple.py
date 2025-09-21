@@ -197,7 +197,7 @@ def test_episode_runner_basic():
         query = "Who won the FA Cup in 2020?"
         
         # Test random policy
-        policy_config = PolicyConfig("random", "random")
+        policy_config = PolicyConfig(policy_type="random", selection_strategy="random")
         episode = runner.run_episode(query, policy_config, save_episode=False)
         
         logger.info(f"Random policy: reward={episode.metrics['total_reward']:.3f}, "

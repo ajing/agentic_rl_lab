@@ -155,7 +155,8 @@ class RAFTTrainer:
                 
                 # Generate answer from trajectory
                 answer = self._generate_answer_from_episode(episode_result)
-                context = [doc.content for doc in episode_result.final_state.selected_documents]
+                final_state = episode_result.final_state
+                context = [doc.content for doc in final_state.selected_documents] if final_state else []
                 
                 # Score with reward model
                 reward_score = self._score_answer(query, answer, context)
@@ -195,7 +196,8 @@ class RAFTTrainer:
             Generated answer
         """
         # Simple implementation: combine selected document contents
-        selected_docs = episode_result.final_state.selected_documents
+        final_state = episode_result.final_state
+        selected_docs = final_state.selected_documents if final_state else []
         
         if not selected_docs:
             return "I couldn't find relevant information to answer your question."
