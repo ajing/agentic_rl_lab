@@ -1,0 +1,76 @@
+{
+  "episode_id": "episode_101_8427",
+  "query": "I'm planning a trip to Japan next month. What should I know about the weather and cultural etiquette?",
+  "final_answer": null,
+  "metrics": {
+    "total_reward": 0.2,
+    "avg_reward": 0.1,
+    "episode_length": 2,
+    "num_documents_selected": 2,
+    "final_step": 2
+  },
+  "states": [
+    {
+      "step": 1,
+      "selected_doc_ids": [
+        "34674"
+      ],
+      "num_remaining": 9,
+      "features": {
+        "num_candidates": 10,
+        "query_length": 101,
+        "rewritten_query_length": 101
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "34674",
+        "12642"
+      ],
+      "num_remaining": 8,
+      "features": {
+        "num_candidates": 10,
+        "query_length": 101,
+        "rewritten_query_length": 101
+      }
+    },
+    {
+      "step": 2,
+      "selected_doc_ids": [
+        "34674",
+        "12642"
+      ],
+      "num_remaining": 8,
+      "features": {
+        "num_candidates": 10,
+        "query_length": 101,
+        "rewritten_query_length": 101
+      }
+    }
+  ],
+  "actions": [
+    {
+      "doc_id": "34674",
+      "action_type": "select"
+    },
+    {
+      "doc_id": "12642",
+      "action_type": "select"
+    }
+  ],
+  "rewards": [
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    },
+    {
+      "step_reward": 0.1,
+      "novelty_reward": 0.0,
+      "relevance_reward": 0.0,
+      "total_reward": 0.1
+    }
+  ]
+}

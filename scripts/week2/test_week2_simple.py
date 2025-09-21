@@ -16,6 +16,10 @@ import argparse
 # Add project root to path (so we can import src modules)
 sys.path.append(str(Path(__file__).parent.parent.parent))
 
+# Load environment variables from .env file
+from dotenv import load_dotenv
+load_dotenv()
+
 logger = logging.getLogger(__name__)
 
 

@@ -15,8 +15,8 @@ import numpy as np
 import torch
 from torch.utils.data import Dataset, DataLoader
 
-from src.env.rag_environment import RAGEnvironment, RAGAction, ConversationTurn
-from src.policy.episode_runner import EpisodeRunner, PolicyConfig, EpisodeResult
+from src.env.rag_environment import RAGEnvironment, RLAction, ConversationTurn
+from src.policy.episode_runner import EpisodeRunner, PolicyConfig
 from src.reward.reward_model import LightweightRewardModel
 from src.reward.reward_shaping import RewardShaper
 from src.training.dpo_trainer import DPOTrainerWrapper, TrainingConfig
@@ -184,7 +184,7 @@ class RAFTTrainer:
         
         return candidates
     
-    def _generate_answer_from_episode(self, episode_result: EpisodeResult) -> str:
+    def _generate_answer_from_episode(self, episode_result) -> str:
         """
         Generate answer from episode result.
         
