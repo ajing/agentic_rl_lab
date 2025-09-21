@@ -23,39 +23,54 @@ LEADR addresses key challenges in conversational RAG:
 
 1) Download CORAL raw files
 ```bash
-python3 scripts/download_coral.py
+python3 scripts/data_preparation/download_coral.py
 ```
 
 2) Prepare corpus for indexing
 ```bash
-python3 scripts/prepare_coral_corpus.py
+python3 scripts/data_preparation/prepare_coral_corpus.py
 ```
 
 3) Build indexes
 ```bash
 # BM25
-python3 scripts/build_bm25.py
+python3 scripts/data_preparation/build_bm25.py
 
 # Vector (Sentence-Transformers); will fallback to sklearn if FAISS is unavailable
-python3 scripts/build_faiss.py --model sentence-transformers/all-MiniLM-L6-v2
+python3 scripts/data_preparation/build_faiss.py --model sentence-transformers/all-MiniLM-L6-v2
 ```
 
 4) Run queries
 ```bash
 # BM25
-python3 scripts/query_bm25.py "who won the fa cup" --k 3
+python3 scripts/week1/query_bm25.py "who won the fa cup" --k 3
 
 # Vector
-python3 scripts/query_vector.py "who won the fa cup" --k 3
+python3 scripts/week1/query_vector.py "who won the fa cup" --k 3
 ```
 
 Data is stored under `data/coral/`, and indexes under `index/`.
+
+## 📁 Scripts Organization
+
+The `scripts/` directory is organized by functionality and development phase:
+
+- **`data_preparation/`** - Download, process, and index CORAL dataset
+- **`week1/`** - Basic RAG pipeline and retrieval methods  
+- **`week2/`** - RL Environment and advanced reranking
+- **`week3_4/`** - Reward modeling and training components
+- **`week5_6/`** - BC and RAFT training with real data
+- **`training/`** - General training and generation scripts
+- **`evaluation/`** - Evaluation and benchmarking scripts
+- **`testing/`** - Testing and validation scripts
+
+See `scripts/README.md` for detailed documentation of all scripts.
 
 ## RAG Fusion CLI (BM25 + Vector via RRF)
 
 Combine BM25 and vector search with Reciprocal Rank Fusion:
 ```bash
-python3 scripts/rag_rrf.py "who won the fa cup" --k 5
+python3 scripts/week1/rag_rrf.py "who won the fa cup" --k 5
 ```
 
 ## Generator via OpenRouter (Grok 3 Mini)
